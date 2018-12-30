@@ -3,3 +3,6 @@
 package-lock.json
 .idea
 .vs
+/**.js
+/**.d.ts
+/**.js.map
