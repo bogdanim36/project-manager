@@ -1,0 +1,25 @@
+<div class="ui-g ui-fluid">
+	<div class="ui-g-12">
+		<label for="name">Name</label>
+		<input pInputText id="name" size="60" class="ui-inputtext" autocomplete="off" [(ngModel)]="config.data.item.name"/>
+	</div>
+	<div class="ui-g-12">
+		<label for="description">Description</label>
+		<textarea pInputTextarea id="description" size="40" class="ui-inputtextarea" [(ngModel)]="config.data.item.description"></textarea>
+	</div>
+	<div class="ui-g-12">
+		<label for="closed">Closed</label>
+	<p-toggleButton id="closed"
+						 class="ui-togglebutton"
+						 [(ngModel)]="config.data.item.closed"></p-toggleButton>
+	</div>
+</div>
+<p-footer>
+	<div class="ui-dialog-buttonpane">
+		<button type="button"
+				  pButton icon="fa fa-check" (click)="config.data.save(config.data.isNewItem, config.data.source, config.data.item)" [label]="config.data.uiConfig.labels.save"></button>
+		<button type="button"
+				  [disabled]="config.data.isNewItem"
+				  pButton icon="fa fa-close" (click)="config.data.delete(config.data.source)" [label]="config.data.uiConfig.labels.delete"></button>
+	</div>
+</p-footer>
