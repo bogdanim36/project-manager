@@ -7,3 +7,4 @@ I started this project as a pretext for deepening of technologies and tools: Typ
  - use angular live dev server with proxy
  - create base classes for Server side: Controller, Service, Repository
  - create base classes for Client side: entity typed generic service 
+ - create components to generate list for desktop and mobile devices, edit entity form
