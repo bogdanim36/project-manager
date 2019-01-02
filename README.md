@@ -10,7 +10,7 @@ I started this project as a pretext for deepening of technologies and tools: Typ
  - create generic layout for applications with left side slide tree menu - done;
  - create components to generate list for desktop and mobile devices, edit entity form - work in progress.
  
- <h2>Installing and run project</ht>
+ <h2>Installing and run project</h2>
  1. clone this repository
  2. run npm install in project folder
  3. create database with db-scripts/init-db.sql
