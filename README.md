@@ -1,6 +1,6 @@
 # Project Manager
 I started this project as a pretext for deepening of technologies and tools: Typescript , Angular7, Express NodeJS, Webpack, PrimeNg.
-<br>Objectives:
+Objectives:
  - using typescript not only on client side, but server side too - done. 
  - having a shared folder for models and other useful code on both sides: client and server - done.
  - use automatic nodejs server update with nodemon and webpack - done.
