@@ -11,11 +11,11 @@ I started this project as a pretext for deepening of technologies and tools: Typ
  - create components to generate list for desktop and mobile devices, edit entity form - work in progress.
  
  <h2>Installing and run project</h2>
- 1. clone this repository
- 2. run npm install in project folder
- 3. create database with db-scripts/init-db.sql
- 4. create tables with db-scripts/create-tables.sql
- 5. run npm server:build. This will create dist/server.bundle.js
- 6. run npm server:start. This will start nodeJs api server.
- 7. run npm client:start. This will run ng serve with proxy config (src/client/proxy.conf.json).
- 8. View app on http://localhost:4201
+ - 1. clone this repository
+ - 2. run npm install in project folder
+ - 3. create database with db-scripts/init-db.sql
+ - 4. create tables with db-scripts/create-tables.sql
+ - 5. run npm server:build. This will create dist/server.bundle.js
+ - 6. run npm server:start. This will start nodeJs api server.
+ - 7. run npm client:start. This will run ng serve with proxy config (src/client/proxy.conf.json).
+ - 8. View app on http://localhost:4201
