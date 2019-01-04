@@ -5,7 +5,7 @@ Objectives:
  - having a shared folder for models and other useful code on both sides: client and server. Done.
  - use automatic nodejs server update with nodemon and webpack having separated node modules packages for client and server side. Done.
  - use angular live dev server with proxy. Done.
- - create generic classes for Server side (separation of concerns pattern design): Controller, Service, Repository. Done.
+ - create generic classes for Server side (separation of concerns pattern design): Controller, Service, Repository, including CRUD operation. Done.
  - create generic class for Client side: entity typed generic service. Done. 
  - create generic layout for applications with left side slide tree menu. Done;
  - create components to generate list for desktop and mobile devices, edit entity form - work in progress.
