@@ -7,11 +7,11 @@ module.exports = function (env, argv) {
 		mode: env.production ? 'production' : 'development',
 		devtool: env.production ? 'source-maps' : 'eval',
 		target: "node",
-		entry: './src/server/index.ts',
+		entry: './src/server/src/index.ts',
 		watch:true,
 		output: {
-			path: path.resolve(__dirname, 'dist'),
-			filename: "server-bundle.js",
+			path: path.resolve(__dirname, 'src/server/dist'),
+			filename: "server.js",
 			libraryTarget: 'commonjs'
 		},
 		node: {
@@ -40,8 +40,8 @@ module.exports = function (env, argv) {
 				".json",
 			],
 			alias:{
-				'@server':path.resolve(__dirname, './src/server/'),
-				'@module':path.resolve(__dirname, './src/server/app/pm/'),
+				'@server':path.resolve(__dirname, './src/server/src/'),
+				'@module':path.resolve(__dirname, './src/server/src/app/pm/'),
 				'@shared':path.resolve(__dirname, './src/shared/')
 			}
 		},

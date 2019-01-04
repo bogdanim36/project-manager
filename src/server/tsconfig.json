@@ -11,20 +11,20 @@
     "target": "es6",
     "removeComments": true,
     "typeRoots": [
-      "../../node_modules/@types"
+      "./node_modules/@types"
     ],
     "paths": {
       "@shared/*": [
         "../shared/*"
       ],
       "@module/*": [
-        "./app/pm/*"
+        "./src/app/pm/*"
       ],
       "@server/*": [
-        "./*"
+        "./src/*"
       ],
       "*": [
-        "../../node_modules/@types"
+        "./node_modules/@types"
       ]
     },
     "lib": [

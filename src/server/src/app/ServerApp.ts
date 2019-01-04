@@ -32,7 +32,7 @@ export class ServerApp {
 
     public start(): void {
         this.app.listen(this.port, () => {
-            console.log('Running server on port11 %s', this.port);
+            console.log('Running server on port %s', this.port);
         }).on('error', function (e) {
             console.log('oroare', e);
         });
