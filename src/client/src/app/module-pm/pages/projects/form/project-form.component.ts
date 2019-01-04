@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {DynamicDialogConfig, DynamicDialogRef} from 'primeng/api';
 import {ProjectsIndexComponent} from '@app/module-pm/pages/projects/index/projects-index.component';
-// import {InputTextareaModule} from 'primeng/inputtextarea';
-// import {InputSwitchModule} from 'primeng/inputswitch';
 
 @Component({
     selector: 'app-project-form',

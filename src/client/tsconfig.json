@@ -9,7 +9,7 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es6",
+    "target": "es5",
     "paths": {
       "@app/*": ["./src/app/*"],
       "@shared/*": ["../shared/*"]

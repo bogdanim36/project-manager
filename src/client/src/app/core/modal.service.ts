@@ -6,14 +6,14 @@ export class ModalService {
     constructor(private confirmSrv: ConfirmationService) {
     }
 
-    confirm(message, header = 'Alert', acceptLabel = 'OK', rejectLabel: "Cancel", successCallback: Function, rejectCallbac: Function, acceptVisible) {
+    confirm(message, header = 'Alert', acceptLabel = 'OK', rejectLabel: "Cancel", successCallback: Function, rejectCallback: Function) {
         return this.confirmSrv.confirm({
             header: header,
             message: message,
             acceptLabel: acceptLabel,
             rejectLabel: rejectLabel,
             accept: successCallback,
-            reject: rejectCallbac
+            reject: rejectCallback
         });
     }
 
