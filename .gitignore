@@ -2,12 +2,10 @@
 /node_modules
 /src/server/node_modules
 /src/client/node_modules
-package-lock.json
 .idea
 .vs
 *.js
 !src/client/src/karma.conf.js
 !webpack.config.js
-!src/client/src/app/app.component.html.js
 *.d.ts
 *.js.map
