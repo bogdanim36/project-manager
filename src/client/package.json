@@ -4,7 +4,6 @@
   "version": "1.0.2",
   "scripts": {
     "ng": "ng",
-    "client:start": "cd src/client && ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

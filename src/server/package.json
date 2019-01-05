@@ -3,6 +3,8 @@
   "description": "Program Manager",
   "version": "1.0.2",
   "private": false,
+  "repository": "https://github.com/bogdanim36/project-manager",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.16.4",
     "express-session": "^1.15.6",
