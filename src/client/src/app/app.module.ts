@@ -12,7 +12,6 @@ import {
     SidebarModule, ToggleButtonModule
 } from 'primeng/primeng';
 import {MatButtonModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
-import {DeviceDetectorService} from 'ngx-device-detector';
 import {AppRoutingModule} from '@app/app-routing.module';
 import {AppComponent} from '@app/app.component';
 import {SideMenuComponent} from '@app/layout/side-menu/side-menu.component';
@@ -79,7 +78,7 @@ import {InputSwitchModule} from 'primeng/inputswitch';
         InputTextareaModule,
         ToggleButtonModule
     ],
-    providers: [DeviceDetectorService,
+    providers: [
         HttpClient,
         MenuService,
         DialogService,

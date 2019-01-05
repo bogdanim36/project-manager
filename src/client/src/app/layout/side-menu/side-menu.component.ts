@@ -1,5 +1,4 @@
-import {ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {DeviceDetectorService, DeviceInfo} from 'ngx-device-detector';
+import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {MenuService} from './menu.service';
 import {NavigationEnd, Router} from '@angular/router';
 import {filter, map, withLatestFrom} from 'rxjs/operators';

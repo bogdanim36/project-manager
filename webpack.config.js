@@ -8,7 +8,7 @@ module.exports = function (env, argv) {
 		devtool: env.production ? 'source-maps' : 'eval',
 		target: "node",
 		entry: './src/server/src/index.ts',
-		watch: env.production ? false: true,
+		watch:true,
 		output: {
 			path: path.resolve(__dirname, 'src/server/dist'),
 			filename: "server.js",
