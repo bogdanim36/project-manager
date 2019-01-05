@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require("fs");
 var webpack = require('webpack');
+const nodeExternals = require('webpack-node-externals');
 module.exports = function (env, argv) {
 	console.log("env", env);
 	return {
@@ -8,7 +9,7 @@ module.exports = function (env, argv) {
 		devtool: env.production ? 'source-maps' : 'eval',
 		target: "node",
 		entry: './src/server/src/index.ts',
-		watch:true,
+		watch: true,
 		output: {
 			path: path.resolve(__dirname, 'src/server/dist'),
 			filename: "server.js",
@@ -23,14 +24,14 @@ module.exports = function (env, argv) {
 			Buffer: false,
 			setImmediate: true
 		},
-		externals: fs.readdirSync("./node_modules")
+		externals: [fs.readdirSync("./node_modules")
 			.reduce(function (acc, mod) {
 				if (mod === ".bin") {
 					return acc
 				}
 				acc[mod] = "commonjs " + mod;
 				return acc
-			}, {}),
+			}, {}), nodeExternals()],
 		resolve: {
 			extensions: [
 				'.webpack.js',
@@ -39,10 +40,10 @@ module.exports = function (env, argv) {
 				".js",
 				".json",
 			],
-			alias:{
-				'@server':path.resolve(__dirname, './src/server/src/'),
-				'@module':path.resolve(__dirname, './src/server/src/app/pm/'),
-				'@shared':path.resolve(__dirname, './src/shared/')
+			alias: {
+				'@server': path.resolve(__dirname, './src/server/src/'),
+				'@module': path.resolve(__dirname, './src/server/src/app/pm/'),
+				'@shared': path.resolve(__dirname, './src/shared/')
 			}
 		},
 		module: {

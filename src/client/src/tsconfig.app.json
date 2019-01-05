@@ -2,9 +2,20 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/app",
-    "types": [],
+    "paths": {
+      "@app/*": [
+        "./app/*"
+      ],
+      "@shared/*": [
+        "../../shared/*"
+      ]
+    },
     "target": "es5",
-        "lib": ["es2015", "es2017", "dom"]
+    "lib": [
+      "es2015",
+      "es2017",
+      "dom"
+    ]
   },
   "exclude": [
     "test.ts",

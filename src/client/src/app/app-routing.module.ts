@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {MenuItem} from "primeng/api";
 import {UsersIndexComponent} from "./module-pm/pages/users/index/users-index.component";
-import {ProjectsIndexComponent} from '@app/module-pm/pages/projects/index/projects-index.component';
+import {ProjectsIndexComponent} from './module-pm/pages/projects/index/projects-index.component';
 
 const routes: Routes = [
     {path: 'users', component: UsersIndexComponent},
@@ -28,7 +28,7 @@ export const MenuItems: MenuItem[] =
                         {label: "Routing"},
                         {label: "Tables"},
                         {label: "Pages"},
-                        {label: "Functionalities"},
+                        {label: "Functionality"},
                     ]
                 },
                 {

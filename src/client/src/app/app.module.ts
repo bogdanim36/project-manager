@@ -12,10 +12,10 @@ import {
     SidebarModule, ToggleButtonModule
 } from 'primeng/primeng';
 import {MatButtonModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
-import {AppRoutingModule} from '@app/app-routing.module';
-import {AppComponent} from '@app/app.component';
-import {SideMenuComponent} from '@app/layout/side-menu/side-menu.component';
-import {MainToolbarComponent} from '@app/layout/main-toolbar/main-toolbar.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {SideMenuComponent} from './layout/side-menu/side-menu.component';
+import {MainToolbarComponent} from './layout/main-toolbar/main-toolbar.component';
 import {MenuService} from '@app/layout/side-menu/menu.service';
 import {UsersIndexComponent} from '@app/module-pm/pages/users/index/users-index.component';
 import {UsersClientService} from '@app/module-pm/pages/users/users-client-service';

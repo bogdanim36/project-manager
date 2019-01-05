@@ -11,12 +11,10 @@
     "server:start-dev": "nodemon --inspect ./src/server/dist/server.js"
   },
   "private": false,
-  "dependencies": {},
+  "dependencies": {
+    "webpack-node-externals": "^1.7.2"
+  },
   "devDependencies": {
-    "@types/mysql": "^2.15.5",
-    "@types/node": "^10.12.18",
-    "@types/webpack": "^4.4.22",
-    "@types/webpack-dev-server": "^3.1.1",
     "gulp": "^4.0.0",
     "gulp-typescript": "^5.0.0",
     "nodemon": "^1.18.9",
