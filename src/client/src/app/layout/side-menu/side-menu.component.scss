@@ -43,4 +43,6 @@ app-main-toolbar.mat-toolbar {
 a{
 	border: 1px solid red;
 }
-
+:host ::ng-deep .mat-drawer-inner-container{
+  overflow-y: scroll;
+}
