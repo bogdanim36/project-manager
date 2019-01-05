@@ -10,7 +10,8 @@ export class MainToolbarComponent implements OnInit {
     appTitle:string;
 
     constructor() {
-        this.appTitle = appInfo.name;
+        this.appTitle = appInfo.name + " v" + appInfo.version;
+        document.title = this.appTitle;
     }
 
     ngOnInit() {
