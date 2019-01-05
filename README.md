@@ -10,12 +10,14 @@ Objectives:
  - create components to generate list for desktop and mobile devices, edit entity form - work in progress.
  
  <h2>Installing and run project</h2>
-<br>  1. clone this repository
-<br>  2. run npm install in project folder, src/client and src/server folders.
-<br>  3. create database with db-scripts/init-db.sql
-<br>  4. create tables with db-scripts/create-tables.sql
-<br>  5. run npm server:build-dev. This will create dist/server.js
-<br>  6. run npm server:start-dev. This will start nodeJs api server.
-<br>  7. run npm client:start. This will run ng serve with proxy config (src/client/proxy.conf.json).
-<br>  8. View app on http://localhost:4201
-<br>  9. For production build run gulp build-prod. This will ruin build for client and server side and copy source files in dist folder
+<br>  01. Clone this repository.
+<br>  02. Create database with db-scripts/init-db.sql.
+<br>  04. Create tables with db-scripts/create-tables.sql
+<br>  05. Change extends in root tslint.json to you general tslint.json file, or delete extend.
+<br>  06. Change server port in src/server/src/ConfigApi.ts and in src/client/proxy.conf.json to the desired one.
+<br>  07. Change angular dev server port in src/client/angular.json, serve.port to the desired one.
+<br>  08. Run npm server:build-dev. This will create dist/server.js
+<br>  09. Run npm server:start-dev. This will start nodeJs api server.
+<br>  10. Run npm client:start. This will run ng serve with proxy config (src/client/proxy.conf.json).
+<br>  11. View app on http://localhost:4201
+<br>  12. For production build run gulp build-prod. This will ruin build for client and server side and copy source files in dist folder
