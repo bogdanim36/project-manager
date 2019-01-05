@@ -18,7 +18,7 @@
         "../shared/*"
       ],
       "@module/*": [
-        "./src/app/pm/*"
+        "./src/app/module/*"
       ],
       "@server/*": [
         "./src/*"
@@ -28,7 +28,8 @@
       ]
     },
     "lib": [
-      "es2018"
+      "es2018",
+      "dom"
     ]
   }
 }
