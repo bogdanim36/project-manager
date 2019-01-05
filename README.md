@@ -3,8 +3,8 @@ I started this project as a pretext for deepening of technologies and tools: Typ
 Objectives:
  - using typescript not only on client side, but server side too. Done. 
  - having a shared folder for models and other useful code on both sides: client and server. Done.
- - use automatic nodejs server update with nodemon and webpack and use angular live dev server with proxy having separated node modules packages for client and server side. Also creating gulp task for production build.Done.
- - create generic classes for Server side (separation of concerns pattern design): Controller, Service, Repository. Done.
+ - use automatic nodejs server update with nodemon and webpack and use angular live dev server with proxy having separated node modules packages for client and server side. Also creating gulp task for production build. Done.
+ - create generic classes for Server side (separation of concerns pattern design having generic CRUD operation): Controller, Service, Repository. Done.
  - create generic class for Client side: entity typed generic service. Done. 
  - create generic layout for applications with left side slide tree menu. Done;
  - create components to generate list for desktop and mobile devices, edit entity form - work in progress.
