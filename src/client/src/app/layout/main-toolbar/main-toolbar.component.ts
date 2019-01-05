@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {appInfo} from "../../../app-info";
 
 @Component({
     selector: 'app-main-toolbar',
@@ -6,9 +7,10 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./main-toolbar.component.scss']
 })
 export class MainToolbarComponent implements OnInit {
-    appTitle = "Project Manager";
+    appTitle:string;
 
     constructor() {
+        this.appTitle = appInfo.name;
     }
 
     ngOnInit() {
