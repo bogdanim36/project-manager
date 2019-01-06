@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {appInfo} from "../../../app-info";
+import {appInfo} from "@shared/app-info";
 
 @Component({
     selector: 'app-main-toolbar',

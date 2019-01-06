@@ -41,7 +41,7 @@ module.exports = function (env, argv) {
 			],
 			alias: {
 				'@server': path.resolve(__dirname, './src/server/src/'),
-				'@module': path.resolve(__dirname, './src/server/src/app/pm/'),
+				'@module': path.resolve(__dirname, './src/server/src/app/module/'),
 				'@shared': path.resolve(__dirname, './src/shared/')
 			}
 		},

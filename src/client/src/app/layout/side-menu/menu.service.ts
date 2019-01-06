@@ -1,16 +1,15 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
 import {MenuItem} from 'primeng/api';
-import {MenuItems} from '../../app-routing.module';
-
+import {MenuItems} from '@app/app-routing.module';
+import {ConfigMenu} from '@shared/config-menu';
 
 @Injectable()
 export class MenuService {
     items: MenuItem[];
 
     constructor(private http: HttpClient) {
-        this.items = MenuItems;
+        this.items = ConfigMenu[0].menu as Array<MenuItem>;
     }
 
     private getJSON(url: string) {

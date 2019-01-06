@@ -1,6 +1,5 @@
 import * as express from 'express';
 import {ConfigApi} from '@server/ConfigApi';
-import {ConfigMenu} from '@server/ConfigMenu';
 import bodyParser = require('body-parser');
 import {Application} from 'express';
 import {ServerStore} from '@server/app/ServerStore';
@@ -9,7 +8,6 @@ export class ServerApp {
     private app: express.Application;
     private port: string | number;
     private apiConfig: ConfigApi;
-    private menu: ConfigMenu;
     public store: ServerStore;
 
     constructor() {
@@ -26,7 +24,6 @@ export class ServerApp {
 
     private config(): void {
         this.apiConfig = new ConfigApi();
-        this.menu = new ConfigMenu();
         this.port = process.env.PORT || this.apiConfig.port;
     }
 
