@@ -17,7 +17,10 @@ export class ProjectsIndexComponent extends PageComponent implements OnInit {
     isNewItem = false;
     editingItem: Partial<Project>;
 
-    constructor(public service: ProjectsClientService, breakpointObserver: BreakpointObserver, public uiConfig: ProjectsUiConfig, public dialogService: DialogService) {
+    constructor(public service: ProjectsClientService,
+                breakpointObserver: BreakpointObserver,
+                public uiConfig: ProjectsUiConfig,
+                public dialogService: DialogService) {
         super(breakpointObserver);
     }
 

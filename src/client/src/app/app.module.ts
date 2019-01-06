@@ -5,7 +5,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
     ButtonModule,
     DialogModule,
-    DialogService,
+    DialogService, DynamicDialogConfig,
     DynamicDialogRef,
     InputTextareaModule,
     InputTextModule,
@@ -43,11 +43,14 @@ import {TasksUiConfig} from '@app/module/pages/tasks/tasks-ui-config';
 import {TasksClientService} from '@app/module/pages/tasks/tasks-client-service';
 import {EntityMobileListComponent} from '@app/components/entity-page/mobile-list/entity-mobile-list.component';
 import {EntityFormComponent} from '@app/components/entity-page/form/entity-form.component';
+import {TaskFormComponent} from '@app/module/pages/tasks/form/task-form.component';
 
 @NgModule({
     entryComponents: [
         UserFormComponent,
         ProjectFormComponent,
+        EntityFormComponent,
+        TaskFormComponent
     ],
     declarations: [
         AppComponent,
@@ -64,7 +67,8 @@ import {EntityFormComponent} from '@app/components/entity-page/form/entity-form.
         ProjectsTableListComponent,
         EntityTableListComponent,
         EntityMobileListComponent,
-        EntityFormComponent
+        EntityFormComponent,
+        TaskFormComponent
     ],
     imports: [
         BrowserModule,
@@ -100,7 +104,10 @@ import {EntityFormComponent} from '@app/components/entity-page/form/entity-form.
         ProjectsClientService,
         ProjectsUiConfig,
         TasksUiConfig,
-        TasksClientService],
+        TasksClientService,
+        EntityFormComponent,
+        DynamicDialogConfig
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

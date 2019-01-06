@@ -5,7 +5,6 @@ import {DialogService} from 'primeng/api';
 import {OnInit, Type} from '@angular/core';
 import {ClientService} from '@app/core/client-service';
 
-// export class EntityComponent<M, C, S extends ClientService<M>, F> extends PageComponent implements OnInit {
 export class EntityIndexComponent<M, C, S> extends PageComponent implements OnInit {
     isNewItem = false;
     form: Type<any>;
@@ -15,9 +14,8 @@ export class EntityIndexComponent<M, C, S> extends PageComponent implements OnIn
     protected dialogService: DialogService;
     ref: any;
 
-    constructor(protected breakpointObserver: BreakpointObserver) {
+    constructor(protected breakpointObserver: BreakpointObserver, protected formClass: any ) {
         super(breakpointObserver);
-        // this.form = new this.formClass.prototype.constructor();
         this.ref = this;
     }
 
@@ -35,23 +33,23 @@ export class EntityIndexComponent<M, C, S> extends PageComponent implements OnIn
 
     showDialog(isNewItem: boolean, source) {
         this.isNewItem = isNewItem;
-        const  editingItem =  this.service.instanceCreate(source);
-        this.dialogService.open(this.form, {
+        const editingItem = this.service.instanceCreate(source);
+        this.dialogService.open(this.formClass, {
             data: {
-                uiConfig:this.uiConfig,
-                item: editingItem,
+                uiConfig: this.uiConfig,
+                item: editingItem as M,
                 source: source,
                 launcher: this,
                 isNewItem: isNewItem,
                 save: this.save.bind(this),
                 delete: this.delete.bind(this)
             },
-            height: this.isHandset? "100%": "auto",
-            width: this.isHandset?"100%": "300px"
+            height: this.isHandset ? '100%' : 'auto',
+            width: this.isHandset ? '100%' : '300px'
         });
     }
 
-    save(isNewItem, source,edited) {
+    save(isNewItem, source, edited) {
         if (isNewItem)
             this.service.create(edited);
         else

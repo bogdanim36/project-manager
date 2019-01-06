@@ -8,7 +8,7 @@ export class TasksUiConfig extends EntityUiConfig {
         this.addColumn({field: 'description', header: 'Description', width: '100%', editable: true});
         this.addColumn({field: 'type', header: 'Type', width: '100%', editable: true});
         this.addColumn({field: 'closed', header: 'Closed', sortable: true, width: '100px', editable: true});
-        this.labels.list = 'List of tasks';
+        this.labels.list = 'List of Tasks';
         this.labels.addItem = 'Add Task';
         this.labels.save = 'Save';
         this.labels.delete = 'Delete';

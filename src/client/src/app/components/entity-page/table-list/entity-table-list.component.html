@@ -1,5 +1,7 @@
 <p-table [value]="parentRef.service.items"
 			[columns]="parentRef.uiConfig.columns"
+			scrollable="true"
+			scrollHeight="200px"
 			#entitiesTable>
 	<ng-template pTemplate="caption">
 		{{parentRef.uiConfig.labels.list}}
