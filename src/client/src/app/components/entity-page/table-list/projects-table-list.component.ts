@@ -1,5 +1,5 @@
 import {Component, forwardRef, Inject, OnInit, ViewChild} from '@angular/core';
-import {ProjectsIndexComponent} from '@app/module-pm/pages/projects/index/projects-index.component';
+import {ProjectsIndexComponent} from '@app/module/pages/projects/index/projects-index.component';
 import {Table} from 'primeng/table';
 
 @Component({

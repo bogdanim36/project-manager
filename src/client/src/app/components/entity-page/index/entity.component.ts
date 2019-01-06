@@ -1,23 +1,15 @@
-import {Component, OnInit} from '@angular/core';
 import {BreakpointObserver} from '@angular/cdk/layout';
 
 import {PageComponent} from '@app/core/page.component';
 import {DialogService} from 'primeng/api';
-import {Project} from '@shared/project';
-import {ProjectsUiConfig} from '@app/module-pm/pages/projects/projects-ui-config';
-import {ProjectsClientService} from '@app/module-pm/pages/projects/projects-client-service';
-import {ProjectFormComponent} from '@app/module-pm/pages/projects/form/project-form.component';
+import {OnInit} from '@angular/core';
+import {ClientService} from '@app/core/client-service';
 
-@Component({
-    selector: 'app-projects-list',
-    templateUrl: './projects-index.component.html',
-    styleUrls: ['./projects-index.component.scss']
-})
-export class TasksIndexComponent extends PageComponent implements OnInit {
+export class EntityComponent<M, C, S extends ClientService<M>, F> extends PageComponent implements OnInit {
     isNewItem = false;
-    editingItem: Partial<Project>;
+    editingItem: Partial<M>;
 
-    constructor(public service: ProjectsClientService, breakpointObserver: BreakpointObserver, public uiConfig: ProjectsUiConfig, public dialogService: DialogService) {
+    constructor(public service: S, breakpointObserver: BreakpointObserver, public uiConfig: C, public dialogService: DialogService, private form: F) {
         super(breakpointObserver);
     }
 
@@ -36,7 +28,7 @@ export class TasksIndexComponent extends PageComponent implements OnInit {
     showDialog(isNewItem: boolean, source) {
         this.isNewItem = isNewItem;
         const  editingItem =  this.service.instanceCreate(source);
-        this.dialogService.open(ProjectFormComponent, {
+        this.dialogService.open(this.form, {
             data: {
                 uiConfig:this.uiConfig,
                 item: editingItem,

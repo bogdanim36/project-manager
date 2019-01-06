@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import {ProjectsTableListComponent} from '@app/module-pm/pages/projects/table-list/projects-table-list.component';
+import {ProjectsTableListComponent} from '@app/module/pages/projects/table-list/projects-table-list.component';
 
 
 describe('ProjectsTableListComponent', () => {

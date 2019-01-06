@@ -4,6 +4,8 @@ export class Task extends Model {
     id?: number;
     name?: string;
     description?: string;
+    type?:string;
+    projectId?:number;
     closed?: boolean ;
     parentId?: number ;
 

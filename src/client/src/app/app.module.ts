@@ -17,36 +17,39 @@ import {AppComponent} from './app.component';
 import {SideMenuComponent} from './layout/side-menu/side-menu.component';
 import {MainToolbarComponent} from './layout/main-toolbar/main-toolbar.component';
 import {MenuService} from '@app/layout/side-menu/menu.service';
-import {UsersIndexComponent} from '@app/module-pm/pages/users/index/users-index.component';
-import {UsersClientService} from '@app/module-pm/pages/users/users-client-service';
+import {UsersIndexComponent} from '@app/module/pages/users/index/users-index.component';
+import {UsersClientService} from '@app/module/pages/users/users-client-service';
 import {TableModule} from 'primeng/table';
 import {DataViewModule} from 'primeng/dataview';
 import {PanelMenuModule} from '@app/prime-ng/panelmenu/panelmenu';
-import {UsersUiConfig} from '@app/module-pm/pages/users/users-ui-config';
+import {UsersUiConfig} from '@app/module/pages/users/users-ui-config';
 import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import {FormsModule} from '@angular/forms';
-import {UsersMobileListComponent} from './module-pm/pages/users/mobile-list/users-mobile-list.component';
-import {UsersTableListComponent} from './module-pm/pages/users/table-list/users-table-list.component';
-import {UserFormComponent} from './module-pm/pages/users/form/user-form.component';
+import {UsersMobileListComponent} from './module/pages/users/mobile-list/users-mobile-list.component';
+import {UsersTableListComponent} from './module/pages/users/table-list/users-table-list.component';
+import {UserFormComponent} from './module/pages/users/form/user-form.component';
 import {DynamicDialogModule} from 'primeng/components/dynamicdialog/dynamicdialog';
-import {ProjectsIndexComponent} from '@app/module-pm/pages/projects/index/projects-index.component';
-import {ProjectFormComponent} from '@app/module-pm/pages/projects/form/project-form.component';
-import {ProjectsMobileListComponent} from '@app/module-pm/pages/projects/mobile-list/projects-mobile-list.component';
-import {ProjectsTableListComponent} from '@app/module-pm/pages/projects/table-list/projects-table-list.component';
-import {ProjectsClientService} from '@app/module-pm/pages/projects/projects-client-service';
-import {ProjectsUiConfig} from '@app/module-pm/pages/projects/projects-ui-config';
+import {ProjectsIndexComponent} from '@app/module/pages/projects/index/projects-index.component';
+import {ProjectFormComponent} from '@app/module/pages/projects/form/project-form.component';
+import {ProjectsMobileListComponent} from '@app/module/pages/projects/mobile-list/projects-mobile-list.component';
+import {ProjectsTableListComponent} from '@app/module/pages/projects/table-list/projects-table-list.component';
+import {ProjectsClientService} from '@app/module/pages/projects/projects-client-service';
+import {ProjectsUiConfig} from '@app/module/pages/projects/projects-ui-config';
 import {InputSwitchModule} from 'primeng/inputswitch';
+import {TasksIndexComponent} from '@app/module/pages/tasks/index/tasks-index.component';
 
 @NgModule({
     entryComponents: [
         UserFormComponent,
-        ProjectFormComponent],
+        ProjectFormComponent,
+    ],
     declarations: [
         AppComponent,
         SideMenuComponent,
         MainToolbarComponent,
         UsersIndexComponent,
         ProjectsIndexComponent,
+        TasksIndexComponent,
         UsersMobileListComponent,
         UsersTableListComponent,
         UserFormComponent,
