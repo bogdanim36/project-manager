@@ -12,12 +12,13 @@
                             label: 'Projects',
                             routerLink: 'projects',
                             icon: 'fa fa-caret-right'
-                        },
-                        {
-                            label: 'Tasks',
-                            routerLink: 'tasks',
-                            icon: 'fa fa-caret-right'
-                        }]
+                         }
+                        //, {
+                        //     label: 'Tasks',
+                        //     routerLink: 'tasks',
+                        //     icon: 'fa fa-caret-right'
+                        // }
+             ]
             }
         ]
     }
