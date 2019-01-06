@@ -1,12 +1,12 @@
-<p-table [value]="parent.service.items"
-			[columns]="parent.uiConfig.columns"
+<p-table [value]="parentRef.service.items"
+			[columns]="parentRef.uiConfig.columns"
 			#entitiesTable>
 	<ng-template pTemplate="caption">
-		{{parent.uiConfig.labels.list}}
+		{{parentRef.uiConfig.labels.list}}
 		<p-button icon="fa fa-plus"
 					 style="position: absolute;right:5px;top:5px;"
-					 (click)="parent.showDialogToAdd()"
-					 [label]="parent.uiConfig.labels.addItem"></p-button>
+					 (click)="parentRef.showDialogToAdd()"
+					 [label]="parentRef.uiConfig.labels.addItem"></p-button>
 
 	</ng-template>
 	<ng-template pTemplate="header" let-columns>
@@ -19,7 +19,7 @@
 								[field]="column.sortable"></p-sortIcon>
 			</th>
 			<th style="width:80px">
-				{{parent.uiConfig.labels.actions}}</th>
+				{{parentRef.uiConfig.labels.actions}}</th>
 		</tr>
 	</ng-template>
 	<ng-template pTemplate="body"
@@ -31,7 +31,7 @@
 				{{rowData[column.field]}}
 			</td>
 			<td style="width:80px;text-align: center"
-				 (click)="parent.showDialogToEdit($event,rowData)">
+				 (click)="parentRef.showDialogToEdit($event,rowData)">
 				<i class="fa fa-edit is-button"></i>
 			</td>
 		</tr>

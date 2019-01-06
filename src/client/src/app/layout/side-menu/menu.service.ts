@@ -1,7 +1,6 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {MenuItem} from 'primeng/api';
-import {MenuItems} from '@app/app-routing.module';
 import {ConfigMenu} from '@shared/config-menu';
 
 @Injectable()

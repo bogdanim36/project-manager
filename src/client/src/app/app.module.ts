@@ -37,6 +37,12 @@ import {ProjectsClientService} from '@app/module/pages/projects/projects-client-
 import {ProjectsUiConfig} from '@app/module/pages/projects/projects-ui-config';
 import {InputSwitchModule} from 'primeng/inputswitch';
 import {TasksIndexComponent} from '@app/module/pages/tasks/index/tasks-index.component';
+import {EntityPageModule} from '@app/components/entity-page.module';
+import {EntityTableListComponent} from '@app/components/entity-page/table-list/entity-table-list.component';
+import {TasksUiConfig} from '@app/module/pages/tasks/tasks-ui-config';
+import {TasksClientService} from '@app/module/pages/tasks/tasks-client-service';
+import {EntityMobileListComponent} from '@app/components/entity-page/mobile-list/entity-mobile-list.component';
+import {EntityFormComponent} from '@app/components/entity-page/form/entity-form.component';
 
 @NgModule({
     entryComponents: [
@@ -55,7 +61,10 @@ import {TasksIndexComponent} from '@app/module/pages/tasks/index/tasks-index.com
         UserFormComponent,
         ProjectFormComponent,
         ProjectsMobileListComponent,
-        ProjectsTableListComponent
+        ProjectsTableListComponent,
+        EntityTableListComponent,
+        EntityMobileListComponent,
+        EntityFormComponent
     ],
     imports: [
         BrowserModule,
@@ -89,7 +98,9 @@ import {TasksIndexComponent} from '@app/module/pages/tasks/index/tasks-index.com
         UsersClientService,
         UsersUiConfig,
         ProjectsClientService,
-        ProjectsUiConfig],
+        ProjectsUiConfig,
+        TasksUiConfig,
+        TasksClientService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

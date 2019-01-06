@@ -1,69 +1,21 @@
 import {Component, OnInit} from '@angular/core';
-import {BreakpointObserver} from '@angular/cdk/layout';
-
-import {PageComponent} from '@app/core/page.component';
 import {DialogService} from 'primeng/api';
-import {Project} from '@shared/project';
-import {ProjectsUiConfig} from '@app/module/pages/projects/projects-ui-config';
-import {ProjectsClientService} from '@app/module/pages/projects/projects-client-service';
-import {ProjectFormComponent} from '@app/module/pages/projects/form/project-form.component';
-
+import {EntityIndexComponent} from '@app/components/entity-page/index/entity-index.component';
+import {TasksUiConfig} from '@app/module/pages/tasks/tasks-ui-config';
+import {TasksClientService} from '@app/module/pages/tasks/tasks-client-service';
+import {Task} from '@shared/task';
+import {BreakpointObserver} from '@angular/cdk/layout';
 @Component({
-    selector: 'app-projects-list',
-    templateUrl: './projects-index.component.html',
-    styleUrls: ['./projects-index.component.scss']
+    selector: 'app-tasks-list',
+    templateUrl: '../../../../components/entity-page/index/entity-index.component.html',
+    styleUrls: ['../../../../components/entity-page/index/entity-index.component.scss', './tasks-index.component.scss']
 })
-export class TasksIndexComponent extends PageComponent implements OnInit {
-    isNewItem = false;
-    editingItem: Partial<Project>;
+export class TasksIndexComponent extends EntityIndexComponent<Task, TasksUiConfig, TasksClientService> implements OnInit {
 
-    constructor(public service: ProjectsClientService, breakpointObserver: BreakpointObserver, public uiConfig: ProjectsUiConfig, public dialogService: DialogService) {
+    constructor( protected breakpointObserver: BreakpointObserver,
+                 protected service: TasksClientService,
+                 protected uiConfig: TasksUiConfig,
+                 protected dialogService: DialogService) {
         super(breakpointObserver);
-    }
-
-    ngOnInit() {
-        this.service.getAll().then((data) => console.log('get data', data), console.error);
-    }
-
-    showDialogToAdd() {
-        this.showDialog(true, {});
-    }
-
-    showDialogToEdit(event, item) {
-        this.showDialog(false, item);
-    }
-
-    showDialog(isNewItem: boolean, source) {
-        this.isNewItem = isNewItem;
-        const  editingItem =  this.service.instanceCreate(source);
-        this.dialogService.open(ProjectFormComponent, {
-            data: {
-                uiConfig:this.uiConfig,
-                item: editingItem,
-                source: source,
-                launcher: this,
-                isNewItem: isNewItem,
-                save: this.save.bind(this),
-                delete: this.delete.bind(this)
-            },
-            height: this.isHandset? "100%": "auto",
-            width: this.isHandset?"100%": "300px"
-        });
-    }
-
-    save(isNewItem, source,edited) {
-        if (isNewItem)
-            this.service.create(edited);
-        else
-            this.service.update(source, edited);
-
-        this.editingItem = null;
-        this.dialogService.dialogComponentRef.instance.close();
-    }
-
-    delete(item) {
-        this.service.delete(item);
-        this.editingItem = null;
-        this.dialogService.dialogComponentRef.instance.close();
     }
 }

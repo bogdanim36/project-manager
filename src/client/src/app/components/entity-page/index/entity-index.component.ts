@@ -2,15 +2,23 @@ import {BreakpointObserver} from '@angular/cdk/layout';
 
 import {PageComponent} from '@app/core/page.component';
 import {DialogService} from 'primeng/api';
-import {OnInit} from '@angular/core';
+import {OnInit, Type} from '@angular/core';
 import {ClientService} from '@app/core/client-service';
 
-export class EntityComponent<M, C, S extends ClientService<M>, F> extends PageComponent implements OnInit {
+// export class EntityComponent<M, C, S extends ClientService<M>, F> extends PageComponent implements OnInit {
+export class EntityIndexComponent<M, C, S> extends PageComponent implements OnInit {
     isNewItem = false;
+    form: Type<any>;
     editingItem: Partial<M>;
+    protected service: ClientService<M>;
+    protected uiConfig: C;
+    protected dialogService: DialogService;
+    ref: any;
 
-    constructor(public service: S, breakpointObserver: BreakpointObserver, public uiConfig: C, public dialogService: DialogService, private form: F) {
+    constructor(protected breakpointObserver: BreakpointObserver) {
         super(breakpointObserver);
+        // this.form = new this.formClass.prototype.constructor();
+        this.ref = this;
     }
 
     ngOnInit() {

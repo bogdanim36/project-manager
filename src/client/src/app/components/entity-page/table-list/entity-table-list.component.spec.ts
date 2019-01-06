@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {EntityTableListComponent} from './entity-table-list.component';
 
-import { TasksIndexComponent } from './tasks-index.component';
 
-describe('ProjectsIndexComponent', () => {
-  let component: TasksIndexComponent;
-  let fixture: ComponentFixture<TasksIndexComponent>;
+describe('EntityTableListComponent', () => {
+  let component: EntityTableListComponent;
+  let fixture: ComponentFixture<EntityTableListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TasksIndexComponent ]
+      declarations: [ EntityTableListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TasksIndexComponent);
+    fixture = TestBed.createComponent(EntityTableListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -7,7 +7,7 @@ import {Task} from '@shared/task';
 export class TasksClientService extends ClientService<Task> {
 
     constructor(protected http: HttpClient) {
-        super(http, Task, 'api/projects');
+        super(http, Task, 'api/tasks');
     }
 
     getAll(params?, reload: boolean = false): Promise<any> {
