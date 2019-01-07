@@ -8,12 +8,11 @@ import {Table} from 'primeng/table';
 })
 export class EntityTableListComponent implements OnInit {
     @Input() parentRef;
-    @ViewChild('entitiesTable') table: Table;
+    @ViewChild('table') table: Table;
 
     constructor() {
     }
 
     ngOnInit() {
-        console.log('parent', this.parentRef, this.table);
     }
 }
