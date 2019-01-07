@@ -19,7 +19,7 @@ export class TaskFormComponent implements OnInit {
         config.closeOnEscape = true;
         this.launcher = config.data.launcher;
         this.data = config.data;
-        this.item = new Task(config.data.item);
+        this.item = config.data.item;
     }
 
     ngOnInit() {
