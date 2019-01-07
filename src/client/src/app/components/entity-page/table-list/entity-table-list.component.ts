@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Renderer, ViewChild} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {Table} from 'primeng/table';
 
 @Component({

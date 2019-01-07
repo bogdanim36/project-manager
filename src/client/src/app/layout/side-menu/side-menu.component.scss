@@ -26,6 +26,7 @@
 .is-mobile mat-sidenav {
   width: 100% !important;
   top:40px !important;
+  background-color: white;
 }
 
 
@@ -46,6 +47,7 @@ app-main-toolbar.mat-toolbar {
 }
 .mat-toolbar-row, .mat-toolbar-single-row {
   height: 40px !important;
+  padding:0;
 }
 mat-sidenav-content{
   padding:10px;
