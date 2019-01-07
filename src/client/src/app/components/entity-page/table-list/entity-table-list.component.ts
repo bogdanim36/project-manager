@@ -13,6 +13,11 @@ export class EntityTableListComponent implements OnInit {
     constructor() {
     }
 
+    ngAfterViewInit() {
+        this.table.el.nativeElement.querySelector('.ui-table').classList.add('box-shadow');
+    }
+
     ngOnInit() {
+
     }
 }
