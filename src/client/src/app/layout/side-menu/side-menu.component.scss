@@ -47,6 +47,7 @@ app-main-toolbar.mat-toolbar {
 }
 .mat-toolbar-row, .mat-toolbar-single-row {
   height: 40px !important;
+  min-height: 40px !important;
   padding:0;
 }
 mat-sidenav-content{
