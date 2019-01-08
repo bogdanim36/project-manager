@@ -1,11 +1,11 @@
 import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {MenuService} from './menu.service';
 import {NavigationEnd, Router} from '@angular/router';
-import {filter, map, withLatestFrom} from 'rxjs/operators';
+import {filter, withLatestFrom} from 'rxjs/operators';
 import {MatSidenav} from '@angular/material';
-import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
-import {Observable} from 'rxjs';
 import {MenuItem} from 'primeng/api';
+import {AppSharedService} from '@app/core/app-shared.service';
+import {Observable} from 'rxjs';
 
 
 @Component({
@@ -17,22 +17,24 @@ export class SideMenuComponent implements OnDestroy, OnInit {
     items: MenuItem[];
     @ViewChild('drawer') drawer: MatSidenav;
     isHandset = false;
-    isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-        .pipe(
-            map(result => result.matches)
-        );
+    isHandset$: Observable<boolean>;
 
-    constructor(private breakpointObserver: BreakpointObserver,
+    constructor(private appShared: AppSharedService,
                 public menuSrv: MenuService,
                 router: Router) {
+
+        appShared.isHandset$.subscribe(value => this.isHandset = value);
+        this.isHandset$ = appShared.isHandset$;
+        //close menu when isHandset === true
         router.events.pipe(
             withLatestFrom(this.isHandset$),
             filter(([a, b]) => b && a instanceof NavigationEnd)
-        ).subscribe(_ => this.drawer.close());
-        this.isHandset$.subscribe(value=>this.isHandset = value);
+        ).subscribe(() => this.drawer.close());
+
     }
+
     ngOnInit(): void {
-        this.menuSrv.getItems().then(response=>{
+        this.menuSrv.getItems().then(response => {
             this.items = response;
         });
     }

@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {BreakpointObserver} from '@angular/cdk/layout';
 
 import {DialogService} from 'primeng/api';
 import {Project} from '@shared/project';
@@ -7,6 +6,7 @@ import {ProjectsUiConfig} from '@app/module/pages/projects/projects-ui-config';
 import {ProjectFormComponent} from '@app/module/pages/projects/form/project-form.component';
 import {EntityIndexComponent} from '@app/components/entity-page/index/entity-index.component';
 import {ProjectsClientService} from '@app/module/pages/projects/projects-client-service';
+import {AppSharedService} from '@app/core/app-shared.service';
 
 @Component({
     selector: 'app-projects-list',
@@ -15,11 +15,11 @@ import {ProjectsClientService} from '@app/module/pages/projects/projects-client-
 })
 export class ProjectsIndexComponent extends EntityIndexComponent<Project, ProjectsUiConfig, ProjectsClientService> implements OnInit {
 
-    constructor(breakpointObserver: BreakpointObserver,
+    constructor(appShared: AppSharedService,
                 public service: ProjectsClientService,
                 public uiConfig: ProjectsUiConfig,
                 public dialogService: DialogService) {
-        super(breakpointObserver, ProjectFormComponent);
+        super(appShared, ProjectFormComponent);
     }
 
 }

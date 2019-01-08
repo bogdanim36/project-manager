@@ -8,6 +8,7 @@ import {AppLayoutModule} from '@app/layout/app-layout.module';
 import {UsersPageModule} from '@app/module/pages/users/users-page.module';
 import {TasksPageModule} from '@app/module/pages/tasks/tasks-page.module';
 import {ProjectsPageModule} from '@app/module/pages/projects/projects-page.module';
+import {AppSharedService} from '@app/core/app-shared.service';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,8 @@ import {ProjectsPageModule} from '@app/module/pages/projects/projects-page.modul
         ProjectsPageModule,
         AppLayoutModule
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    providers: [AppSharedService]
 })
 export class AppModule {
 }

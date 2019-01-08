@@ -4,8 +4,8 @@ import {EntityIndexComponent} from '@app/components/entity-page/index/entity-ind
 import {TasksUiConfig} from '@app/module/pages/tasks/tasks-ui-config';
 import {TasksClientService} from '@app/module/pages/tasks/tasks-client-service';
 import {Task} from '@shared/task';
-import {BreakpointObserver} from '@angular/cdk/layout';
 import {TaskFormComponent} from '@app/module/pages/tasks/form/task-form.component';
+import {AppSharedService} from '@app/core/app-shared.service';
 
 @Component({
     selector: 'app-tasks-list',
@@ -14,11 +14,11 @@ import {TaskFormComponent} from '@app/module/pages/tasks/form/task-form.componen
 })
 export class TasksIndexComponent extends EntityIndexComponent<Task, TasksUiConfig, TasksClientService> implements OnInit {
 
-    constructor(protected breakpointObserver: BreakpointObserver,
+    constructor(appShared: AppSharedService,
                 protected service: TasksClientService,
                 protected uiConfig: TasksUiConfig,
                 protected dialogService: DialogService
     ) {
-        super(breakpointObserver, TaskFormComponent);
+        super(appShared, TaskFormComponent);
     }
 }

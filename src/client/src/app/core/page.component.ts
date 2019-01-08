@@ -1,17 +1,10 @@
-import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
-import {map} from 'rxjs/operators';
-import {Observable} from 'rxjs';
+import {AppSharedService} from '@app/core/app-shared.service';
 
 export class PageComponent {
     isHandset = false;
-    isHandset$: Observable<boolean> ;
 
-    constructor(protected breakpointObserver: BreakpointObserver) {
-        this.isHandset$ = breakpointObserver.observe(Breakpoints.Handset)
-        .pipe(
-            map(result => result.matches)
-        );
-        this.isHandset$.subscribe(value => {
+    constructor(protected appShared: AppSharedService) {
+        appShared.isHandset$.subscribe(value => {
             this.isHandset = value;
         });
     }

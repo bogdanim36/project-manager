@@ -4,6 +4,7 @@ import {PageComponent} from '@app/core/page.component';
 import {DialogService} from 'primeng/api';
 import {OnInit, Type} from '@angular/core';
 import {ClientService} from '@app/core/client-service';
+import {AppSharedService} from '@app/core/app-shared.service';
 
 export class EntityIndexComponent<M, C, S> extends PageComponent implements OnInit {
     isNewItem = false;
@@ -14,8 +15,8 @@ export class EntityIndexComponent<M, C, S> extends PageComponent implements OnIn
     protected dialogService: DialogService;
     ref: any;
 
-    constructor(protected breakpointObserver: BreakpointObserver, protected formClass: any ) {
-        super(breakpointObserver);
+    constructor(protected appShared: AppSharedService, protected formClass: any ) {
+        super(appShared);
         this.ref = this;
     }
 

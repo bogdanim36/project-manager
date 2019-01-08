@@ -10,6 +10,7 @@ import {HttpClient} from '@angular/common/http';
 import {MenuService} from '@app/layout/side-menu/menu.service';
 import {SideMenuComponent} from '@app/layout/side-menu/side-menu.component';
 import {MainToolbarComponent} from '@app/layout/main-toolbar/main-toolbar.component';
+import {LayoutModule} from '@angular/cdk/layout';
 
 @NgModule({
     declarations: [
@@ -25,6 +26,7 @@ import {MainToolbarComponent} from '@app/layout/main-toolbar/main-toolbar.compon
     ],
     imports: [
         BrowserModule,
+        LayoutModule,
         BrowserAnimationsModule,
         AngularFontAwesomeModule,
         PanelMenuModule,

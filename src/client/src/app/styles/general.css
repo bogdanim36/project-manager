@@ -1,5 +1,5 @@
 html {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	bottom: 0;
 	left: 0;
@@ -36,6 +36,9 @@ i.is-button {
 	border-bottom: 1px solid rgba(0, 0, 0, .15);
 	-webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, .175);
 	box-shadow: 3px 3px 3px rgba(0, 0, 0, .175);
+}
+label{
+	font-weight: bold;
 }
 
 

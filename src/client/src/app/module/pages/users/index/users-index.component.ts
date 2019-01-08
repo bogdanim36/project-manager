@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {BreakpointObserver} from '@angular/cdk/layout';
 import {DialogService} from 'primeng/api';
 
 import {UsersUiConfig} from '@app/module/pages/users/users-ui-config';
@@ -7,6 +6,7 @@ import {EntityIndexComponent} from '@app/components/entity-page/index/entity-ind
 import {User} from '@shared/user';
 import {UsersClientService} from '@app/module/pages/users/users-client-service';
 import {UserFormComponent} from '@app/module/pages/users/form/user-form.component';
+import {AppSharedService} from '@app/core/app-shared.service';
 
 @Component({
     selector: 'app-users-list',
@@ -15,11 +15,11 @@ import {UserFormComponent} from '@app/module/pages/users/form/user-form.componen
 })
 export class UsersIndexComponent extends EntityIndexComponent<User, UsersUiConfig, UsersClientService> implements OnInit {
 
-    constructor(breakpointObserver: BreakpointObserver,
+    constructor(appShared: AppSharedService,
                 public service: UsersClientService,
                 public uiConfig: UsersUiConfig,
                 public dialogService: DialogService) {
-        super(breakpointObserver, UserFormComponent);
+        super(appShared, UserFormComponent);
     }
 
 }
