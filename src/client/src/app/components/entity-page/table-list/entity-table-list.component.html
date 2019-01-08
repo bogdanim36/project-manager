@@ -4,9 +4,9 @@
 			scrollHeight="200px"
 			#table>
 	<ng-template pTemplate="caption">
-		{{parentRef.uiConfig.labels.list}}
+		<div >{{parentRef.uiConfig.labels.list}}</div>
 		<p-button icon="fa fa-plus"
-					 style="position: absolute;right:5px;top:5px;"
+					 class="add-btn"
 					 (click)="parentRef.showDialogToAdd()"
 					 [label]="parentRef.uiConfig.labels.addItem"></p-button>
 

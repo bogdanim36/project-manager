@@ -10,9 +10,7 @@ import {TaskFormComponent} from '@app/module/pages/tasks/form/task-form.componen
 @Component({
     selector: 'app-tasks-list',
     templateUrl: '../../../../components/entity-page/index/entity-index.component.html',
-    styleUrls: [
-        '../../../../components/entity-page/index/entity-index.component.scss',
-        './tasks-index.component.scss']
+    styleUrls: ['../../../../components/entity-page/index/entity-index.component.scss']
 })
 export class TasksIndexComponent extends EntityIndexComponent<Task, TasksUiConfig, TasksClientService> implements OnInit {
 
