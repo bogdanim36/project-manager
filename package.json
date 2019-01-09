@@ -6,13 +6,19 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "install": "npm i typescript@3.1.6 && cd src\\server && npm i && cd.. && cd client && npm i",
-    "client:start": "cd src/client && ng serve --proxy-config proxy.conf.json",
+    "install": "npm i typescript@3.1.6",
+    "install-all": "npm i typescript@3.1.6 && cd src\\server && npm i && cd.. && cd client && npm i",
+    "client:start-dev": "cd src/client && ng serve --proxy-config proxy.conf.json",
+    "client:start-prod": "webpack-dev-server --config webpack.config.js --env.production",
     "server:build-dev": "webpack --config webpack.config.js --env.develpement",
-    "server:start-dev": "nodemon --inspect ./src/server/dist/server.js"
+    "server:start-dev": "SET port=8001 && nodemon --inspect ./src/server/dist/dev/server.js",
+    "server:build-prod": "webpack --config webpack.config.js --env.production",
+    "server:start-prod": "SET port=8010 && node ./dist/server.js"
   },
   "private": false,
   "dependencies": {
+    "cb": "^0.1.0",
+    "fs-sync": "^1.0.6",
     "gulp": "^4.0.0",
     "gulp-typescript": "^5.0.0",
     "nodemon": "^1.18.9",
@@ -22,6 +28,7 @@
     "typescript": "^3.1.6",
     "webpack": "^4.28.3",
     "webpack-cli": "^3.2.0",
+    "webpack-dev-server": "^3.1.14",
     "webpack-node-externals": "^1.7.2"
   }
 }

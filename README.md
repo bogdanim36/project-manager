@@ -13,11 +13,14 @@ Objectives:
 <br>  01. Clone this repository.
 <br>  02. Create database with db-scripts/init-db.sql.
 <br>  04. Create tables with db-scripts/create-tables.sql
-<br>  05. Change extends in root tslint.json to you general tslint.json file, or delete extend.
-<br>  06. Change server port in src/server/src/ConfigApi.ts and in src/client/proxy.conf.json to the desired one.
+<br>  05. Change extends in root tslint.json to you general tslint.json file, or delete extends.
+<br>  06. Change server port in src/server/src/ConfigApi.ts and in src/client/proxy.conf.json to the desired one or in packages scripts.
 <br>  07. Change angular dev server port in src/client/angular.json, serve.port to the desired one.
+<br>  07. Run nmp run install-all script in root folder for install all packages in root, client and server folder.
 <br>  08. Run npm server:build-dev. This will create dist/server.js
 <br>  09. Run npm server:start-dev. This will start nodeJs api server.
-<br>  10. Run npm client:start. This will run ng serve with proxy config (src/client/proxy.conf.json).
+<br>  10. Run npm client:start-dev. This will run ng serve with proxy config (src/client/proxy.conf.json).
 <br>  11. View app on http://localhost:4201
-<br>  12. For production build run gulp build-prod. This will ruin build for client and server side and copy source files in dist folder
+<br>  12. For production build run gulp build-prod. This will run build for client and server side and copy source files in dist folder.
+<br>  13. Test production with Server:start-prod and Client:start-prod npm scripts.
+
