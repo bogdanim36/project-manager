@@ -9,7 +9,7 @@ export class TasksServerController extends ServerServiceController<Task, TasksSe
 
     constructor(protected app, private store: ServerStore) {
         super(app, "tasks");
-        // this.service = new TasksServerService(this.store);
+        this.service = new TasksServerService(this.store);
         this.setDefaultRoutes();
     }
 }
