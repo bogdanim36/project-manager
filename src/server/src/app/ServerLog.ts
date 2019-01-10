@@ -5,7 +5,8 @@ export class ServerLog {
     constructor(allLogsFile, errorFile) {
         const {keys} = Object;
         const {Console} = console;
-        let allLogs = new Console(fs.createWriteStream(allLogsFile, ));
+        if (process.env.dev) return;
+        let allLogs = new Console(fs.createWriteStream(allLogsFile ));
         let errorLogs = new Console(fs.createWriteStream(errorFile, {flags:'a'}));
 
         keys(Console.prototype).forEach(key => {

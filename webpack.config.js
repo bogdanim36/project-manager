@@ -43,12 +43,12 @@ module.exports = function (env, argv) {
 				{
 					test: /\.ts?$/,
 					use: 'ts-loader',
-					exclude: [/node_modules/, path.resolve(__dirname, './src/client')]
+					exclude: [/node_modules/, path.resolve(__dirname, './src/client'), path.resolve(__dirname, './src/templates')]
 				},
 				{
 					test: /\.js?$/,
 					use: 'babel-loader',
-					exclude: [/node_modules/, path.resolve(__dirname, './src/client')]
+					exclude: [/node_modules/, path.resolve(__dirname, './src/client'), path.resolve(__dirname, './src/templates')]
 				}
 			]
 		},

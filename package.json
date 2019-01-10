@@ -11,16 +11,21 @@
     "client:start-dev": "cd src/client && ng serve --proxy-config proxy.conf.json",
     "client:start-prod": "webpack-dev-server --config webpack.config.js --env.production",
     "server:build-dev": "webpack --config webpack.config.js --env.developement",
-    "server:start-dev": "SET port=8001 && nodemon --inspect ./src/server/dist/dev/server.js",
+    "server:start-dev": "SET port=8001 && SET dev = true && nodemon --inspect ./src/server/dist/dev/server.js",
     "server:build-prod": "webpack --config webpack.config.js --env.production",
-    "server:start-prod": "SET port=8010 && node ./dist/server.js"
+    "server:start-prod": "SET prod = true && SET port=8010 && node ./dist/server.js"
   },
   "private": false,
   "dependencies": {
     "cb": "^0.1.0",
     "fs-sync": "^1.0.6",
     "gulp": "^4.0.0",
+    "gulp-data": "^1.3.1",
+    "gulp-if": "^2.0.2",
+    "gulp-rename": "^1.4.0",
+    "gulp-template": "^5.0.0",
     "gulp-typescript": "^5.0.0",
+    "make-case": "0.0.7",
     "nodemon": "^1.18.9",
     "ts-loader": "^5.3.2",
     "ts-node": "^7.0.1",
@@ -29,6 +34,7 @@
     "webpack": "^4.28.3",
     "webpack-cli": "^3.2.0",
     "webpack-dev-server": "^3.1.14",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^1.7.2",
+    "yargs": "^12.0.5"
   }
 }
