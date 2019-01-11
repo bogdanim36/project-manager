@@ -1,13 +1,13 @@
 import {ServerService} from '@server/app/ServerService';
-import {<%=Entities%>ServerRepository} from './<%=Entities%>ServerRepository';
+import {<%=entities.pascalCase%>ServerRepository} from './<%=entities.pascalCase%>ServerRepository';
 import {ServerStore} from '@server/app/ServerStore';
-import {<%=Entity%>} from '@shared/<%=entity%>';
+import {<%=entity.pascalCase%>} from '@shared/<%=entity.paramCase%>';
 
-export class <%=Entities%>ServerService extends ServerService<<%=Entity%>, <%=Entities%>ServerRepository> {
-    public repository: <%=Entities%>ServerRepository;
+export class <%=entities.pascalCase%>ServerService extends ServerService<<%=entity.pascalCase%>, <%=entities.pascalCase%>ServerRepository> {
+    public repository: <%=entities.pascalCase%>ServerRepository;
 
     constructor(protected store: ServerStore) {
-        super(<%=Entity%>, store);
-        this.repository = new <%=Entities%>ServerRepository(store);
+        super(<%=entity.pascalCase%>, store);
+        this.repository = new <%=entities.pascalCase%>ServerRepository(store);
     }
 }

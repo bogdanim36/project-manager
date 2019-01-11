@@ -1,13 +1,13 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {ClientService} from '@app/core/client-service';
-import {<%= Entity %>} from '@shared/<%= entity %>';
+import {<%= entity.pascalCase %>} from '@shared/<%= entity.paramCase %>';
 
 @Injectable({providedIn: 'root'})
-export class <%= Entities %>ClientService extends ClientService<<%= Entity %>> {
+export class <%= entities.pascalCase %>ClientService extends ClientService<<%= entity.pascalCase %>> {
 
     constructor(protected http: HttpClient) {
-        super(http, <%= Entity %>, 'api/<%= entities %>');
+        super(http, <%= entity.pascalCase %>, 'api/<%= entities.pascalCase %>');
     }
 
     getAll(params?, reload: boolean = false): Promise<any> {

@@ -13,22 +13,22 @@ import {
     ToggleButtonModule
 } from 'primeng/primeng';
 
-import {<%= Entity %>FormComponent} from '@app/module/pages/<%= entities %>/form/<%= entity %>-form.component';
-import {<%= Entities %>IndexComponent} from '@app/module/pages/<%= entities %>/index/<%= entities %>-index.component';
-import {<%= Entities %>ClientService} from '@app/module/pages/<%= entities %>/<%= entities %>-client-service';
-import {<%= Entities %>UiConfig} from '@app/module/pages/<%= entities %>/<%= entities %>-ui-config';
+import {<%= entity.pascalCase %>FormComponent} from '@app/module/pages/<%= entities.paramCase %>/form/<%= entity.paramCase %>-form.component';
+import {<%= entities.pascalCase %>IndexComponent} from '@app/module/pages/<%= entities.paramCase %>/index/<%= entities.paramCase %>-index.component';
+import {<%= entities.pascalCase %>ClientService} from '@app/module/pages/<%= entities.paramCase %>/<%= entities.paramCase %>-client-service';
+import {<%= entities.pascalCase %>UiConfig} from '@app/module/pages/<%= entities.paramCase %>/<%= entities.paramCase %>-ui-config';
 
 @NgModule({
     entryComponents: [
-        <%= Entity %>FormComponent,
+        <%= entity.pascalCase %>FormComponent,
     ],
     declarations: [
-        <%= Entities %>IndexComponent,
-        <%= Entity %>FormComponent,
+        <%= entities.pascalCase %>IndexComponent,
+        <%= entity.pascalCase %>FormComponent,
     ],
     providers: [
-        <%= Entities %>ClientService,
-        <%= Entities %>UiConfig
+        <%= entities.pascalCase %>ClientService,
+        <%= entities.pascalCase %>UiConfig
     ],
     imports: [
         BrowserModule,
@@ -45,6 +45,6 @@ import {<%= Entities %>UiConfig} from '@app/module/pages/<%= entities %>/<%= ent
     ]
 })
 
-export class <%= Entities %>PageModule {
+export class <%= entities.pascalCase %>PageModule {
 
 }
