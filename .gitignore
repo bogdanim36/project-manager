@@ -6,7 +6,6 @@
 /src/client/node_modules
 .idea
 .vs
-*.js
 !src/client/src/karma.conf.js
 !webpack.config.js
 *.d.ts
