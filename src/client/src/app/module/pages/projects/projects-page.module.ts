@@ -12,9 +12,10 @@ import {
 	InputTextModule,
 	ToggleButtonModule
 } from 'primeng/primeng';
+
 import {ProjectFormComponent} from '@app/module/pages/projects/form/project-form.component';
 import {ProjectsIndexComponent} from '@app/module/pages/projects/index/projects-index.component';
-import {ProjectsClientService} from '@app/module/pages/projects/projects-client-service';
+import {ProjectsClientService} from '@app/module/pages/projects/projects-client.service';
 import {ProjectsUiConfig} from '@app/module/pages/projects/projects-ui-config';
 
 @NgModule({
@@ -45,5 +46,4 @@ import {ProjectsUiConfig} from '@app/module/pages/projects/projects-ui-config';
 })
 
 export class ProjectsPageModule {
-
 }

@@ -5,11 +5,11 @@ module.exports = function entityConfig() {
 			this.form.build();
 			this.uiConfig.build();
 			this.script.build();
-			let text="To do next:";
-			text +="\n1. Add '"+this.entities.pascalCase+"ServerController' to server/src/app/index.ts";
-			text +="\n2. Add client routing '"+this.entities.paramCase+"'  in client/src/app/app-routing.module";
-			text +="\n3. Add client module '"+this.entities.pascalCase+"PageModule'  in client/src/app/app.module";
-			text +="\n4. Add option menu '"+this.entities.name+"' in client/src/app/layout/side-menu/menu.service ";
+			let text = "To do next:";
+			text += "\n1. Add '" + this.entities.pascalCase + "ServerController' to server/src/app/index.ts";
+			text += "\n2. Add client routing '" + this.entities.paramCase + "'  in client/src/app/app-routing.module";
+			text += "\n3. Add client module '" + this.entities.pascalCase + "PageModule'  in client/src/app/app.module";
+			text += "\n4. Add option menu '" + this.entities.name + "' in client/src/app/layout/side-menu/menu.service ";
 			console.log(text);
 		},
 		paths: {
@@ -48,14 +48,21 @@ module.exports = function entityConfig() {
 			regular: function (name, optional, type) {
 				let field = name + (optional ? "?" : "") + ": " + type;
 				config.model.fields += "\t" + field + ";\n";
+				if (type === 'boolean') {
+					let indent = '\n\t\t';
+					this.constructor += this.constructor? '\t\t':indent;
+					this.constructor += 'if (typeof source["' + name + '"] === "number") this["' + name + '"] = source["' + name + '"] === 1;';
+					this.constructor += indent + 'if (typeof source["' + name + '"] === "undefined") this["' + name + '"] = false;';
+				}
 			},
 			expression: function (name, optional, type, expression) {
-				let constructor = "\t\tObject.defineProperty(this, '" + name + "', {";
-				constructor += "\n\t\t\tget() {";
-				constructor += "\n\t\t\t\treturn " + expression;
-				constructor += "\n\t\t\t}";
-				constructor += "\n\t\t});\n";
-				config.model.constructor += constructor;
+				let indent = '\n\t\t';
+				this.constructor += this.constructor? '\t\t':indent;
+				this.constructor += "Object.defineProperty(this, '" + name + "', {";
+				this.constructor += indent + "\tget() {";
+				this.constructor += indent + "\t\treturn " + expression;
+				this.constructor += indent + "\t}";
+				this.constructor += indent + "});\n";
 			}
 		},
 		uiConfig: {
@@ -96,14 +103,15 @@ module.exports = function entityConfig() {
 			},
 			button: function (where, attrs, innerHTML) {
 				let attrsList = ["type='button'", 'pButton'];
-				Object.keys(attrs).forEach(attr=>{
-					attrsList.push( attr + (attrs[attr] !== undefined?  "='" + attrs[attr]+"'":''));
+				Object.keys(attrs).forEach(attr => {
+					attrsList.push(attr + (attrs[attr] !== undefined ? "='" + attrs[attr] + "'" : ''));
 				})
-				this.html[where] += '\n\t\t<button ' + attrsList.join(' ') + '>'+(innerHTML?innerHTML:'') +'</button>';
+				this.html[where] += '\n\t\t<button ' + attrsList.join(' ') + '>' + (innerHTML ? innerHTML : '') + '</button>';
 			},
 			build: function () {
 			}
 		}
 	};
 	return config;
-};
+}
+;

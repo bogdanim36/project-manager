@@ -13,10 +13,10 @@ import {
 	ToggleButtonModule
 } from 'primeng/primeng';
 
-import {UserFormComponent} from './form/user-form.component';
-import {UsersIndexComponent} from './index/users-index.component';
-import {UsersClientService} from './users-client-service';
-import {UsersUiConfig} from './users-ui-config';
+import {UserFormComponent} from '@app/module/pages/users/form/user-form.component';
+import {UsersIndexComponent} from '@app/module/pages/users/index/users-index.component';
+import {UsersClientService} from '@app/module/pages/users/users-client.service';
+import {UsersUiConfig} from '@app/module/pages/users/users-ui-config';
 
 @NgModule({
 	entryComponents: [
@@ -25,6 +25,10 @@ import {UsersUiConfig} from './users-ui-config';
 	declarations: [
 		UsersIndexComponent,
 		UserFormComponent,
+	],
+	providers: [
+		UsersClientService,
+		UsersUiConfig
 	],
 	imports: [
 		BrowserModule,
@@ -38,13 +42,8 @@ import {UsersUiConfig} from './users-ui-config';
 		InputSwitchModule,
 		InputTextareaModule,
 		ToggleButtonModule,
-	],
-	providers: [
-		UsersClientService,
-		UsersUiConfig
 	]
 })
 
 export class UsersPageModule {
-
 }

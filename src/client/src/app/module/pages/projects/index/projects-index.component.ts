@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-
 import {DialogService} from 'primeng/api';
+
+import {AppSharedService} from '@app/core/app-shared.service';
+import {EntityIndexComponent} from '@app/components/entity-page/index/entity-index.component';
 import {Project} from '@shared/project';
 import {ProjectsUiConfig} from '@app/module/pages/projects/projects-ui-config';
 import {ProjectFormComponent} from '@app/module/pages/projects/form/project-form.component';
-import {EntityIndexComponent} from '@app/components/entity-page/index/entity-index.component';
-import {ProjectsClientService} from '@app/module/pages/projects/projects-client-service';
-import {AppSharedService} from '@app/core/app-shared.service';
+import {ProjectsClientService} from '@app/module/pages/projects/projects-client.service';
 
 @Component({
 	selector: 'app-projects-list',
@@ -21,5 +21,4 @@ export class ProjectsIndexComponent extends EntityIndexComponent<Project, Projec
 				public dialogService: DialogService) {
 		super(appShared, ProjectFormComponent);
 	}
-
 }

@@ -1,7 +1,7 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {User} from '@shared/user';
 import {ClientService} from '@app/core/client-service';
+import {User} from '@shared/user';
 
 @Injectable({providedIn: 'root'})
 export class UsersClientService extends ClientService<User> {

@@ -1,4 +1,4 @@
-let base = require('./entity.base');
+let base = require('../entity.base');
 module.exports = function () {
 	let config = new base();
 	config.entity = {name: "Task Type"};

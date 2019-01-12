@@ -12,9 +12,10 @@ import {
 	InputTextModule,
 	ToggleButtonModule
 } from 'primeng/primeng';
+
 import {TaskFormComponent} from '@app/module/pages/tasks/form/task-form.component';
 import {TasksIndexComponent} from '@app/module/pages/tasks/index/tasks-index.component';
-import {TasksClientService} from '@app/module/pages/tasks/tasks-client-service';
+import {TasksClientService} from '@app/module/pages/tasks/tasks-client.service';
 import {TasksUiConfig} from '@app/module/pages/tasks/tasks-ui-config';
 
 @NgModule({
@@ -45,5 +46,4 @@ import {TasksUiConfig} from '@app/module/pages/tasks/tasks-ui-config';
 })
 
 export class TasksPageModule {
-
 }

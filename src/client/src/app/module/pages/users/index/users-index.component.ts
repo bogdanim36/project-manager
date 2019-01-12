@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {DialogService} from 'primeng/api';
 
-import {UsersUiConfig} from '@app/module/pages/users/users-ui-config';
+import {AppSharedService} from '@app/core/app-shared.service';
 import {EntityIndexComponent} from '@app/components/entity-page/index/entity-index.component';
 import {User} from '@shared/user';
-import {UsersClientService} from '@app/module/pages/users/users-client-service';
+import {UsersUiConfig} from '@app/module/pages/users/users-ui-config';
 import {UserFormComponent} from '@app/module/pages/users/form/user-form.component';
-import {AppSharedService} from '@app/core/app-shared.service';
+import {UsersClientService} from '@app/module/pages/users/users-client.service';
 
 @Component({
 	selector: 'app-users-list',
@@ -21,5 +21,4 @@ export class UsersIndexComponent extends EntityIndexComponent<User, UsersUiConfi
 				public dialogService: DialogService) {
 		super(appShared, UserFormComponent);
 	}
-
 }

@@ -4,10 +4,10 @@ import {ServerStore} from '@server/app/ServerStore';
 import {Task} from '@shared/task';
 
 export class TasksServerService extends ServerService<Task, TasksServerRepository> {
-    public repository: TasksServerRepository;
+	public repository: TasksServerRepository;
 
-    constructor(protected store: ServerStore) {
-        super(Task, store);
-        this.repository = new TasksServerRepository(store);
-    }
+	constructor(protected store: ServerStore) {
+		super(Task, store);
+		this.repository = new TasksServerRepository(store);
+	}
 }

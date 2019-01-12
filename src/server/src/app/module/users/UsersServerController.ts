@@ -1,17 +1,16 @@
 import {ServerServiceController} from '@server/app/ServerServiceController';
-import {UserService} from '@module/users/UsersServerService';
 import {ServerStore} from '@server/app/ServerStore';
-import {UsersServerRepository} from '@module/users/UsersServerRepository';
 import {User} from '@shared/user';
+import {UsersServerService} from '@module/users/UsersServerService';
+import {UsersServerRepository} from '@module/users/UsersServerRepository';
 
-export class UsersServerController extends ServerServiceController<User, UserService, UsersServerRepository> {
-    service: UserService;
+export class UsersServerController extends ServerServiceController<User, UsersServerService, UsersServerRepository> {
+	service: UsersServerService;
 
-    constructor(protected app, private store: ServerStore) {
-        super(app, "users");
-        this.service = new UserService(this.store);
-        this.setDefaultRoutes();
-    }
-
+	constructor(protected app, private store: ServerStore) {
+		super(app, "users");
+		this.service = new UsersServerService(this.store);
+		this.setDefaultRoutes();
+	}
 }
 
