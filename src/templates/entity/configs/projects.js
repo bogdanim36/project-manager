@@ -22,7 +22,7 @@ module.exports = function () {
 	};
 	config.uiConfig.build = function () {
 		config.uiConfig.column('name', 'Name', '250px', true, true);
-		config.uiConfig.column('closed', 'Closed', '70px', true, true);
+		config.uiConfig.column('closed', 'Closed', '100px', true, true);
 		config.uiConfig.column('description', 'Description', '100%', true, true);
 	};
 	config.form.build = function () {
