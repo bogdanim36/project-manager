@@ -12,7 +12,7 @@ Objectives:
  - create automation gulp task for generate entity source files for client,shared,server and script. Done.
  - create components to generate list for desktop and mobile devices, edit entity form . Done with PrimeNg components.
  
- - ALL the source entity files (users, projects, task, task-types) are generated with gul gen:entity task
+ - ALL the source entity files (users, projects, task, task-types) are generated with gulp gen:entity task
  
  <h2>Installing and run project</h2>
 <br>  01. Clone this repository.
