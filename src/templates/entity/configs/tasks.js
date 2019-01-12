@@ -6,28 +6,47 @@ module.exports = function () {
 	config.script.schema = "pm";
 	config.script.primaryKey = 'id';
 	config.script.build = function () {
-		//params: name, type, nullable, defaultValue, autoIncrement
-		this.column('id', 'int(11)', false, null, true);
-		this.column('name', 'varchar(100)', false, null, false);
-		this.column('description', 'text', false, null, false);
-		this.column('type', 'varchar(10)', false, null, false);
-		this.column('closed', 'tinyint', false, null, false );
+		config.script.column('id', 'int(11)', false, null, true);
+		config.script.column('name', 'varchar(100)', false, null, false);
+		config.script.column('description', 'text', false, null, false);
+		config.script.column('type', 'varchar(10)', false, null, false);
+		config.script.column('closed', 'tinyint', false, null, false);
+		config.script.column('projectId', 'int(11)', false, null, false);
+		config.script.column('parentId', 'int(11)', true, null, false);
 	};
 	config.model.build = function () {
-		this.regular("id", true, "number");
-		this.regular("name", true, "string");
-		this.regular("description", true, "string");
+		config.model.regular("id", true, "number");
+		config.model.regular("name", true, "string");
+		config.model.regular("type", true, "string");
+		config.model.regular("description", true, "string");
+		config.model.regular("closed", true, "boolean");
+		config.model.regular("projectId", true, "number");
+		config.model.regular("parentId", true, "number");
 		// this.expression("fullName", true, "string", "((this.firstName ? this.firstName.trim() : '') + (this.lastName ? ' ' + this.lastName.trim() : '')).trim();")
 	};
 	config.uiConfig.build = function () {
-		this.column('name', 'Name', '250px', true, true);
-		this.column('description', 'Description', '100%', true, true);
+		config.uiConfig.column('name', 'Name', '250px', true, true);
+		config.uiConfig.column('closed', 'Closed', '70px', true, true);
+		config.uiConfig.column('type', 'Type', '70px', true, true);
+		config.uiConfig.column('description', 'Description', '100%', true, true);
 	};
 	config.form.build = function () {
-		this.inputText('content', 'name', 'Name');
-		this.inputTextarea('content', 'description', 'Description');
-		this.button('footer', 'config.data.uiConfig.labels.save', 'config.data.save(config.data.isNewItem, config.data.source, config.data.item)');
-		this.button('footer', 'config.data.uiConfig.labels.delete', 'config.data.delete(config.data.source)');
+		config.form.inputText('content', 'name', 'Name');
+		config.form.inputText('content', 'type', 'Type');
+		config.form.inputTextarea('content', 'description', 'Description');
+		config.form.toggleButton('content', 'closed', 'Closed');
+		config.form.button('footer', {
+			'[label]': 'config.data.uiConfig.labels.save',
+			'icon': 'fa fa-check',
+			'(click)': 'config.data.save(config.data.isNewItem, config.data.source, config.data.item)'
+		})
+		;
+		config.form.button('footer', {
+			'[label]': 'config.data.uiConfig.labels.delete',
+			'icon': 'fa fa-close',
+			'[disabled]': 'config.data.isNewItem',
+			'(click)': 'config.data.delete(config.data.source)'
+		});
 	};
 	return config;
 };

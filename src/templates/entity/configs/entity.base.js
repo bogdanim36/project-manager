@@ -1,4 +1,4 @@
-module.exports = function () {
+module.exports = function entityConfig() {
 	let config = {
 		build: function () {
 			this.model.build();
@@ -79,6 +79,12 @@ module.exports = function () {
 				this.html[where] += '\n\t\t<input pInputText id="' + field + '"  class="ui-inputtext" autocomplete="off" [(ngModel)]="config.data.item[\'' + field + '\']"/>';
 				this.html[where] += '\n\t</div>';
 			},
+			toggleButton: function (where, field, title, model) {
+				this.html[where] += '\n\t<div class="ui-g-12">';
+				this.html[where] += '\n\t\t<label for="' + field + '">' + title + '</label>;'
+				this.html[where] += '\n\t\t<p-toggleButton  id="' + field + '"  class="ui-togglebutton"  [(ngModel)]="config.data.item[\'' + field + '\']"></p-toggleButton>';
+				this.html[where] += '\n\t</div>';
+			},
 			inputTextarea: function (where, field, title, model) {
 				this.html[where] += '\n\t<div class="ui-g-12">';
 				this.html[where] += '\n\t\t<label for="' + field + '">' + title + '</label>;';
@@ -88,8 +94,12 @@ module.exports = function () {
 			custom: function (where, html) {
 				this.html[where] += html;
 			},
-			button: function (where, label, click) {
-				this.html[where] += '\n\t\t<button type="button" pButton icon="fa fa-check" (click)="' + click + '" [label]="' + label + '"></button>';
+			button: function (where, attrs, innerHTML) {
+				let attrsList = ["type='button'", 'pButton'];
+				Object.keys(attrs).forEach(attr=>{
+					attrsList.push( attr + (attrs[attr] !== undefined?  "='" + attrs[attr]+"'":''));
+				})
+				this.html[where] += '\n\t\t<button ' + attrsList.join(' ') + '>'+(innerHTML?innerHTML:'') +'</button>';
 			},
 			build: function () {
 			}
