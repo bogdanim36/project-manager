@@ -69,6 +69,25 @@ gulp.task("gen:entity", (callback) => {
 				file.basename = config[module.filesName][module.filesNameCase] + (module.filesNameCase === 'paramCase' && baseName ? "-" : "") + baseName;
 			}))
 			.pipe(gulp.dest(config.paths.destRoot + module.dest + (module.entitiesSubdir ? config.entities.paramCase : "")));
+		if (moduleName === 'server') addControllerToServerIndex(config, module);
 	});
+
 	callback();
 });
+
+let addControllerToServerIndex = function (config, module) {
+	let content = fs.read(config.paths.files.serverIndex);
+	// console.log(module, content);
+	let EntitiesServerName = config.entities.pascalCase + "ServerController";
+	if (content.indexOf(EntitiesServerName) > -1) return;
+	// ads import statement
+	let positionToInsert = content.lastIndexOf('import ');
+	positionToInsert = content.indexOf(';', positionToInsert)+1;
+	let stringToInsert = "\nimport {" + EntitiesServerName + "} from '@module/" + config.entities.paramCase + "/"+EntitiesServerName + "';";
+	content = content.substring(0, positionToInsert ) + stringToInsert + content.substring(positionToInsert+1);
+	// declare serverController
+	positionToInsert = content.indexOf('server.start();');
+	stringToInsert = "\nconst " + config.entities.pascalCase + " = new " + EntitiesServerName + "(app, server.store);\n";
+	content = content.substring(0, positionToInsert - 1) + stringToInsert + content.substring(positionToInsert);
+	fs.write(config.paths.files.serverIndex, content);
+};
