@@ -14,6 +14,11 @@ const noRoleMenu: MenuItem[] = [{
                 icon: 'fa fa-caret-right'
             }
             , {
+            label: 'Task Types',
+            routerLink: 'task-types',
+            icon: 'fa fa-caret-right'
+        }
+            , {
             label: 'Tasks',
             routerLink: 'tasks',
             icon: 'fa fa-caret-right'

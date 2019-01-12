@@ -1,21 +1,19 @@
-import {BreakpointObserver} from '@angular/cdk/layout';
-
 import {PageComponent} from '@app/core/page.component';
 import {DialogService} from 'primeng/api';
-import {OnInit, Type} from '@angular/core';
+import {OnInit} from '@angular/core';
 import {ClientService} from '@app/core/client-service';
 import {AppSharedService} from '@app/core/app-shared.service';
 
 export class EntityIndexComponent<M, C, S> extends PageComponent implements OnInit {
     isNewItem = false;
-    form: Type<any>;
+    form: {item:M, errorMessages:Array<string>};
     editingItem: Partial<M>;
     protected service: ClientService<M>;
     protected uiConfig: C;
     protected dialogService: DialogService;
     ref: any;
 
-    constructor(protected appShared: AppSharedService, protected formClass: any ) {
+    constructor(protected appShared: AppSharedService, protected formClass: any) {
         super(appShared);
         this.ref = this;
     }
@@ -50,14 +48,21 @@ export class EntityIndexComponent<M, C, S> extends PageComponent implements OnIn
         });
     }
 
+    saveCallback(response) {
+        if (response.status) {
+            this.editingItem = null;
+            this.dialogService.dialogComponentRef.instance.close();
+        } else {
+            if (response.message) this.form.errorMessages.push(response.message);
+            console.error('save error', response);
+        }
+    }
+
     save(isNewItem, source, edited) {
         if (isNewItem)
-            this.service.create(edited);
+            return this.service.create(edited).then((response) => this.saveCallback(response));
         else
-            this.service.update(source, edited);
-
-        this.editingItem = null;
-        this.dialogService.dialogComponentRef.instance.close();
+            return this.service.update(source, edited).then((response) => this.saveCallback(response));
     }
 
     delete(item) {

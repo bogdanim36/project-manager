@@ -1,4 +1,9 @@
-p-toggleButton {
-  display:block;
-  max-width:70px;
+.errors {
+  padding: 8px;
+}
+.errors >ul{
+  padding: 8px 5px 8px 26px;
+  color: red;
+  border: 1px solid red;
+  transition: border-color 0.2s;
 }
