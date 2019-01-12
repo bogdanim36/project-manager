@@ -7,7 +7,7 @@ import {<%= entity.pascalCase %>} from '@shared/<%= entity.paramCase %>';
 export class <%= entities.pascalCase %>ClientService extends ClientService<<%= entity.pascalCase %>> {
 
     constructor(protected http: HttpClient) {
-        super(http, <%= entity.pascalCase %>, 'api/<%= entities.pascalCase %>');
+        super(http, <%= entity.pascalCase %>, 'api/<%= entities.paramCase %>');
     }
 
     getAll(params?, reload: boolean = false): Promise<any> {

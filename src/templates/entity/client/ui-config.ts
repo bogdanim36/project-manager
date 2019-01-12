@@ -4,7 +4,7 @@ export class <%= entities.pascalCase %>UiConfig extends EntityUiConfig {
 
     constructor() {
         super();
-        <%= uiConfig %>
+<%= uiConfig.columns %>
         this.labels.list = 'List of <%= entities.name %>';
         this.labels.addItem = 'Add <%= entity.name %>';
         this.labels.save = 'Save';
