@@ -6,17 +6,17 @@ import {Project} from '@shared/project';
 import {ProjectsClientService} from '@app/module/pages/projects/projects-client-service';
 
 @Component({
-    selector: 'app-project-form',
-    templateUrl: './project-form.component.html',
-    styleUrls: ['./project-form.component.scss']
+	selector: 'app-project-form',
+	templateUrl: './project-form.component.html',
+	styleUrls: ['./project-form.component.scss']
 })
 export class ProjectFormComponent extends EntityFormComponent<Project, ProjectsIndexComponent, ProjectsClientService, ProjectsIndexComponent> {
 
-    constructor(public ref: DynamicDialogRef, public config: DynamicDialogConfig) {
-        super(ref, config);
-    }
+	constructor(public ref: DynamicDialogRef, public config: DynamicDialogConfig) {
+		super(ref, config);
+	}
 
-    ngOnInit() {
-    }
+	ngOnInit() {
+	}
 
 }

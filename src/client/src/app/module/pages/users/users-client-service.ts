@@ -6,14 +6,14 @@ import {ClientService} from '@app/core/client-service';
 @Injectable({providedIn: 'root'})
 export class UsersClientService extends ClientService<User> {
 
-    constructor(protected http: HttpClient) {
-        super(http, User, 'api/users');
-    }
+	constructor(protected http: HttpClient) {
+		super(http, User, 'api/users');
+	}
 
-    getAll(params?, reload: boolean = false): Promise<any> {
-        return super.getAll(params, reload).then((response) => {
-            this._items = response;
-            return response;
-        });
-    }
+	getAll(params?, reload: boolean = false): Promise<any> {
+		return super.getAll(params, reload).then((response) => {
+			this._items = response;
+			return response;
+		});
+	}
 }

@@ -6,14 +6,14 @@ import {Task} from '@shared/task';
 @Injectable({providedIn: 'root'})
 export class TasksClientService extends ClientService<Task> {
 
-    constructor(protected http: HttpClient) {
-        super(http, Task, 'api/tasks');
-    }
+	constructor(protected http: HttpClient) {
+		super(http, Task, 'api/tasks');
+	}
 
-    getAll(params?, reload: boolean = false): Promise<any> {
-        return super.getAll(params, reload).then((response) => {
-            this._items = response;
-            return response;
-        });
-    }
+	getAll(params?, reload: boolean = false): Promise<any> {
+		return super.getAll(params, reload).then((response) => {
+			this._items = response;
+			return response;
+		});
+	}
 }

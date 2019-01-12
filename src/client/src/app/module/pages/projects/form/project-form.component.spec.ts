@@ -7,19 +7,19 @@ describe('ProjectFormComponent', () => {
   let fixture: ComponentFixture<ProjectFormComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ProjectFormComponent ]
-    })
-    .compileComponents();
+	TestBed.configureTestingModule({
+	  declarations: [ ProjectFormComponent ]
+	})
+	.compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProjectFormComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+	fixture = TestBed.createComponent(ProjectFormComponent);
+	component = fixture.componentInstance;
+	fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+	expect(component).toBeTruthy();
   });
 });

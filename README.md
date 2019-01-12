@@ -9,8 +9,8 @@ Objectives:
  - create generic classes for Server side (separation of concerns pattern design having generic CRUD operation): Controller, Service, Repository. Done.
  - create generic class for Client side: entity typed generic service. Done. 
  - create generic layout for applications with left side slide tree menu. Done.
- - create automation gul task for generate entity source files for client,shared,server and script. Done.
- - create components to generate list for desktop and mobile devices, edit entity form - work in progress.
+ - create automation gulp task for generate entity source files for client,shared,server and script. Done.
+ - create components to generate list for desktop and mobile devices, edit entity form . Done with PrimeNg components.
  
  <h2>Installing and run project</h2>
 <br>  01. Clone this repository.

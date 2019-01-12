@@ -6,14 +6,14 @@ import {Project} from '@shared/project';
 @Injectable({providedIn: 'root'})
 export class ProjectsClientService extends ClientService<Project> {
 
-    constructor(protected http: HttpClient) {
-        super(http, Project, 'api/projects');
-    }
+	constructor(protected http: HttpClient) {
+		super(http, Project, 'api/projects');
+	}
 
-    getAll(params?, reload: boolean = false): Promise<any> {
-        return super.getAll(params, reload).then((response) => {
-            this._items = response;
-            return response;
-        });
-    }
+	getAll(params?, reload: boolean = false): Promise<any> {
+		return super.getAll(params, reload).then((response) => {
+			this._items = response;
+			return response;
+		});
+	}
 }

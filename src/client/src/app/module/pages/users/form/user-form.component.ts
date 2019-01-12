@@ -6,17 +6,17 @@ import {User} from '@shared/User';
 import {UsersClientService} from '@app/module/pages/users/users-client-service';
 
 @Component({
-    selector: 'app-user-form',
-    templateUrl: './user-form.component.html',
-    styleUrls: ['./user-form.component.scss']
+	selector: 'app-user-form',
+	templateUrl: './user-form.component.html',
+	styleUrls: ['./user-form.component.scss']
 })
 export class UserFormComponent extends EntityFormComponent<User, UsersIndexComponent, UsersClientService, UsersIndexComponent> {
 
-    constructor(public ref: DynamicDialogRef, public config: DynamicDialogConfig) {
-        super(ref, config);
-    }
+	constructor(public ref: DynamicDialogRef, public config: DynamicDialogConfig) {
+		super(ref, config);
+	}
 
-    ngOnInit() {
-    }
+	ngOnInit() {
+	}
 
 }

@@ -9,17 +9,17 @@ import {UserFormComponent} from '@app/module/pages/users/form/user-form.componen
 import {AppSharedService} from '@app/core/app-shared.service';
 
 @Component({
-    selector: 'app-users-list',
-    templateUrl: '../../../../components/entity-page/index/entity-index.component.html',
-    styleUrls: ['../../../../components/entity-page/index/entity-index.component.scss']
+	selector: 'app-users-list',
+	templateUrl: '../../../../components/entity-page/index/entity-index.component.html',
+	styleUrls: ['../../../../components/entity-page/index/entity-index.component.scss']
 })
 export class UsersIndexComponent extends EntityIndexComponent<User, UsersUiConfig, UsersClientService> implements OnInit {
 
-    constructor(appShared: AppSharedService,
-                public service: UsersClientService,
-                public uiConfig: UsersUiConfig,
-                public dialogService: DialogService) {
-        super(appShared, UserFormComponent);
-    }
+	constructor(appShared: AppSharedService,
+				public service: UsersClientService,
+				public uiConfig: UsersUiConfig,
+				public dialogService: DialogService) {
+		super(appShared, UserFormComponent);
+	}
 
 }

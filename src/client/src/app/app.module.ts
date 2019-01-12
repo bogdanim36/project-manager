@@ -12,21 +12,21 @@ import {AppSharedService} from '@app/core/app-shared.service';
 import {TaskTypesPageModule} from '@app/module/pages/task-types/task-types-page.module';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-    ],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-        AppRoutingModule,
-        UsersPageModule,
-        TasksPageModule,
-        ProjectsPageModule,
-        TaskTypesPageModule,
-        AppLayoutModule
-    ],
-    bootstrap: [AppComponent],
-    providers: [AppSharedService]
+	declarations: [
+		AppComponent,
+	],
+	imports: [
+		BrowserModule,
+		HttpClientModule,
+		AppRoutingModule,
+		UsersPageModule,
+		TasksPageModule,
+		ProjectsPageModule,
+		TaskTypesPageModule,
+		AppLayoutModule
+	],
+	bootstrap: [AppComponent],
+	providers: [AppSharedService]
 })
 export class AppModule {
 }

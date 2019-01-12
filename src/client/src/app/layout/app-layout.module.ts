@@ -13,29 +13,29 @@ import {MainToolbarComponent} from '@app/layout/main-toolbar/main-toolbar.compon
 import {LayoutModule} from '@angular/cdk/layout';
 
 @NgModule({
-    declarations: [
-        SideMenuComponent,
-        MainToolbarComponent,
-    ],
-    exports:[
-        SideMenuComponent,
-    ],
-    providers: [
-        HttpClient,
-        MenuService,
-    ],
-    imports: [
-        BrowserModule,
-        LayoutModule,
-        BrowserAnimationsModule,
-        AngularFontAwesomeModule,
-        PanelMenuModule,
-        MatIconModule,
-        MatToolbarModule,
-        MatSidenavModule,
-        MatButtonModule,
-        SidebarModule,
-    ]
+	declarations: [
+		SideMenuComponent,
+		MainToolbarComponent,
+	],
+	exports:[
+		SideMenuComponent,
+	],
+	providers: [
+		HttpClient,
+		MenuService,
+	],
+	imports: [
+		BrowserModule,
+		LayoutModule,
+		BrowserAnimationsModule,
+		AngularFontAwesomeModule,
+		PanelMenuModule,
+		MatIconModule,
+		MatToolbarModule,
+		MatSidenavModule,
+		MatButtonModule,
+		SidebarModule,
+	]
 })
 
 export class AppLayoutModule {

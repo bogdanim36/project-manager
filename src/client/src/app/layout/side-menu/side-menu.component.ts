@@ -9,36 +9,36 @@ import {Observable} from 'rxjs';
 
 
 @Component({
-    selector: 'app-side-menu',
-    templateUrl: 'side-menu.component.html',
-    styleUrls: ['side-menu.component.scss'],
+	selector: 'app-side-menu',
+	templateUrl: 'side-menu.component.html',
+	styleUrls: ['side-menu.component.scss'],
 })
 export class SideMenuComponent implements OnDestroy, OnInit {
-    items: MenuItem[];
-    @ViewChild('drawer') drawer: MatSidenav;
-    isHandset = false;
-    isHandset$: Observable<boolean>;
+	items: MenuItem[];
+	@ViewChild('drawer') drawer: MatSidenav;
+	isHandset = false;
+	isHandset$: Observable<boolean>;
 
-    constructor(private appShared: AppSharedService,
-                public menuSrv: MenuService,
-                router: Router) {
+	constructor(private appShared: AppSharedService,
+				public menuSrv: MenuService,
+				router: Router) {
 
-        appShared.isHandset$.subscribe(value => this.isHandset = value);
-        this.isHandset$ = appShared.isHandset$;
-        //close menu when isHandset === true
-        router.events.pipe(
-            withLatestFrom(this.isHandset$),
-            filter(([a, b]) => b && a instanceof NavigationEnd)
-        ).subscribe(() => this.drawer.close());
+		appShared.isHandset$.subscribe(value => this.isHandset = value);
+		this.isHandset$ = appShared.isHandset$;
+		//close menu when isHandset === true
+		router.events.pipe(
+			withLatestFrom(this.isHandset$),
+			filter(([a, b]) => b && a instanceof NavigationEnd)
+		).subscribe(() => this.drawer.close());
 
-    }
+	}
 
-    ngOnInit(): void {
-        this.menuSrv.getItems().then(response => {
-            this.items = response;
-        });
-    }
+	ngOnInit(): void {
+		this.menuSrv.getItems().then(response => {
+			this.items = response;
+		});
+	}
 
-    ngOnDestroy(): void {
-    }
+	ngOnDestroy(): void {
+	}
 }
