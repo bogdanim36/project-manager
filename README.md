@@ -16,8 +16,8 @@ Objectives:
  
  <h2>Installing and run project</h2>
 <br>  01. Clone this repository.
-<br>  02. Create database with db-scripts/init-db.sql.
-<br>  04. Create tables with db-scripts/create-tables.sql
+<br>  02. Create database with src/scripts/init-db.sql.
+<br>  04. Create tables with src/scripts/create-tables.sql
 <br>  05. Change extends in root tslint.json to you general tslint.json file, or delete extends.
 <br>  06. Change server port in src/server/src/ConfigApi.ts and in src/client/proxy.conf.json to the desired one or in packages scripts.
 <br>  07. Change angular dev server port in src/client/angular.json, serve.port to the desired one.
