@@ -6,16 +6,16 @@ module.exports = function entityConfig() {
 			this.uiConfig.build();
 			this.script.build();
 			let text = "To do next:";
-			text += "\n1. Added '" + this.entities.pascalCase + "ServerController' to server/src/app/index.ts";
-			text += "\n2. Add client routing '" + this.entities.paramCase + "'  in client/src/app/app-routing.module";
-			text += "\n3. Add client module '" + this.entities.pascalCase + "PageModule'  in client/src/app/app.module";
-			text += "\n4. Add option menu '" + this.entities.name + "' in client/src/app/layout/side-menu/menu.service ";
-			console.log(text);
+			text += "\n Add option menu '" + this.entities.name + "' in shared/config-menu.ts";
+			// console.log(text);
 		},
 		paths: {
 			destRoot: "./src",
 			files:{
-				serverIndex:'./src/server/src/index.ts'
+				serverIndex:'./src/server/src/index.ts',
+				appRoutingModule:'./src/client/src/app/app-routing.module.ts',
+				appModule:'./src/client/src/app/app.module.ts',
+				configMenu: './src/shared/config-menu.ts'
 			},
 			modules: {
 				client: {src: ["src/templates/entity/client/**", "!src/templates/entity/client/form/**"], dest: "/client/src/app/module/pages/", entitiesSubdir: true, filesNameCase: 'paramCase', filesName: "entities"},

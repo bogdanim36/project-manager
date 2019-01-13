@@ -23,8 +23,18 @@ module.exports = function () {
 	config.form.build = function () {
 		this.inputText('content', 'name', 'Name');
 		this.inputTextarea('content', 'description', 'Description');
-		this.button('footer', 'config.data.uiConfig.labels.save', 'config.data.save(config.data.isNewItem, config.data.source, config.data.item)');
-		this.button('footer', 'config.data.uiConfig.labels.delete', 'config.data.delete(config.data.source)');
+		config.form.button('footer', {
+			'[label]': 'config.data.uiConfig.labels.save',
+			'icon': 'fa fa-check',
+			'(click)': 'config.data.save(config.data.isNewItem, config.data.source, config.data.item)'
+		})
+		;
+		config.form.button('footer', {
+			'[label]': 'config.data.uiConfig.labels.delete',
+			'icon': 'fa fa-close',
+			'[disabled]': 'config.data.isNewItem',
+			'(click)': 'config.data.delete(config.data.source)'
+		});
 	};
 	return config;
 };

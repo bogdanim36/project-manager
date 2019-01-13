@@ -10,20 +10,23 @@ import {TasksPageModule} from '@app/module/pages/tasks/tasks-page.module';
 import {ProjectsPageModule} from '@app/module/pages/projects/projects-page.module';
 import {AppSharedService} from '@app/core/app-shared.service';
 import {TaskTypesPageModule} from '@app/module/pages/task-types/task-types-page.module';
+import {TaskStatusPageModule} from '@app/module/pages/task-status/task-status-page.module';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 	],
-	imports: [
+	
+imports : [
 		BrowserModule,
 		HttpClientModule,
 		AppRoutingModule,
+		AppLayoutModule,
 		UsersPageModule,
 		TasksPageModule,
 		ProjectsPageModule,
 		TaskTypesPageModule,
-		AppLayoutModule
+		TaskStatusPageModule
 	],
 	bootstrap: [AppComponent],
 	providers: [AppSharedService]

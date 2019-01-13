@@ -17,14 +17,24 @@ module.exports = function () {
 		// this.expression("fullName", true, "string", "((this.firstName ? this.firstName.trim() : '') + (this.lastName ? ' ' + this.lastName.trim() : '')).trim();")
 	};
 	config.uiConfig.build = function () {
-		this.column('name', 'Name', '100px', true, true);
+		this.column('name', 'Name', '200px', true, true);
 		this.column('description', 'Description', '100%', true, true);
 	};
 	config.form.build = function () {
 		this.inputText('content', 'name', 'Name');
 		this.inputTextarea('content', 'description', 'Description');
-		this.button('footer', 'config.data.uiConfig.labels.save', 'config.data.save(config.data.isNewItem, config.data.source, config.data.item)');
-		this.button('footer', 'config.data.uiConfig.labels.delete', 'config.data.delete(config.data.source)');
+		config.form.button('footer', {
+			'[label]': 'config.data.uiConfig.labels.save',
+			'icon': 'fa fa-check',
+			'(click)': 'config.data.save(config.data.isNewItem, config.data.source, config.data.item)'
+		})
+		;
+		config.form.button('footer', {
+			'[label]': 'config.data.uiConfig.labels.delete',
+			'icon': 'fa fa-close',
+			'[disabled]': 'config.data.isNewItem',
+			'(click)': 'config.data.delete(config.data.source)'
+		});
 	};
 	return config;
 };
