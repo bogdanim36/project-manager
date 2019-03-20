@@ -1,5 +1,7 @@
 # Project Manager
 I started this project as a pretext for deepening of technologies and tools: Typescript , Angular7, Express NodeJS, Webpack, PrimeNg.
+A newer version of this project using Angular Material and Ag-Grid replacing PrimeNG can be seen on <a href='https://github.com/bogdanim36/angular-fullstack-typescript'>Starter kitt</a>.
+
 Objectives:
  - using typescript not only on client side, but server side too. Done. 
  - having a shared folder for models and other useful code on both sides: client and server. Done.
